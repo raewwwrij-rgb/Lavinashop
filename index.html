@@ -3,123 +3,115 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LAVINASHOP - Toko Baju Kekinian</title>
-<meta name="description" content="LAVINASHOP menjual baju wanita dan pria kekinian. Kirim ke Makassar, Bandung, Jawa Timur, dan seluruh Indonesia.">
+<title>LAVINASHOP - Toko Baju Online Bandung</title>
 <style>
 * {margin:0; padding:0; box-sizing:border-box; font-family:Arial, Helvetica, sans-serif;}
 body {background:#fff7fa; color:#222;}
-a {text-decoration:none;}
-header {background:#111; color:#fff; padding:14px 20px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:10;}
-header h1 {font-size:22px; letter-spacing:1px;}
+a {text-decoration:none; color:inherit;}
+header {background:#111; color:white; padding:15px 20px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:10;}
+header h1 {font-size:22px;}
 header h1 span {color:#ff5a8a;}
-nav a {color:#fff; margin-left:14px; font-size:14px;}
-.hero {background:linear-gradient(135deg,#ff5a8a,#ff9ac2); color:#fff; text-align:center; padding:75px 20px;}
-.hero h2 {font-size:36px; margin-bottom:12px;}
-.hero p {font-size:17px; opacity:.95;}
-.btn {display:inline-block; background:#111; color:#fff; padding:13px 28px; border-radius:30px; font-weight:bold; margin-top:22px;}
-.promo {background:#111; color:#fff; text-align:center; padding:10px; font-size:14px;}
+.cart-btn {background:#ff5a8a; color:white; border:none; padding:10px 16px; border-radius:25px; font-weight:bold; cursor:pointer;}
+.hero {background:linear-gradient(135deg,#ff5a8a,#ff9ac2); color:white; text-align:center; padding:60px 20px;}
+.hero h2 {font-size:34px; margin-bottom:10px;}
+.hero p {font-size:17px;}
 .container {max-width:1150px; margin:auto; padding:25px 18px;}
-.section-title {text-align:center; font-size:28px; margin:25px 0 8px;}
+.section-title {text-align:center; font-size:28px; margin:25px 0 10px;}
 .section-sub {text-align:center; color:#666; margin-bottom:25px;}
-.categories {display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:30px;}
-.categories span {background:#fff; border:1px solid #ffd3e2; color:#ff4f88; padding:9px 16px; border-radius:25px; font-size:14px; font-weight:bold;}
+.search {width:100%; max-width:500px; display:block; margin:0 auto 25px; padding:12px; border:1px solid #ddd; border-radius:10px;}
 .products {display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:22px;}
-.card {background:#fff; border-radius:14px; overflow:hidden; box-shadow:0 3px 14px rgba(0,0,0,.08);}
-.card img {width:100%; height:300px; object-fit:cover;}
+.card {background:white; border-radius:14px; overflow:hidden; box-shadow:0 3px 14px rgba(0,0,0,.08);}
+.card img {width:100%; height:280px; object-fit:cover;}
 .card-body {padding:16px;}
-.badge {display:inline-block; background:#ffe3ee; color:#e83e7a; font-size:12px; font-weight:bold; padding:5px 9px; border-radius:20px; margin-bottom:8px;}
-.card h3 {font-size:18px; margin-bottom:7px;}
+.badge {background:#ffe3ee; color:#e83e7a; padding:5px 9px; border-radius:20px; font-size:12px; font-weight:bold;}
+.card h3 {margin:10px 0 6px; font-size:18px;}
 .card p {color:#666; font-size:14px; line-height:1.5; min-height:42px;}
-.price {color:#ff4f88; font-weight:bold; font-size:20px; margin:10px 0 4px;}
-.old {text-decoration:line-through; color:#999; font-size:14px; margin-left:6px;}
-select {width:100%; padding:9px; border-radius:8px; border:1px solid #ddd; margin:10px 0;}
-.wa-btn {display:block; text-align:center; background:#25D366; color:#fff; padding:11px; border-radius:9px; font-weight:bold;}
-.info {display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; margin-top:45px;}
-.box {background:#fff; padding:22px; border-radius:14px; box-shadow:0 3px 14px rgba(0,0,0,.06); text-align:center;}
+.price {color:#ff4f88; font-size:20px; font-weight:bold; margin:10px 0;}
+.old {text-decoration:line-through; color:#999; font-size:14px;}
+select, input[type=number] {width:100%; padding:9px; margin:6px 0; border:1px solid #ddd; border-radius:8px;}
+.add-btn {width:100%; background:#111; color:white; border:none; padding:11px; border-radius:9px; font-weight:bold; cursor:pointer;}
+.wa-btn {display:block; text-align:center; background:#25D366; color:white; padding:11px; border-radius:9px; font-weight:bold; margin-top:8px;}
+.cart-box {background:white; padding:22px; border-radius:14px; box-shadow:0 3px 14px rgba(0,0,0,.08); margin-top:40px;}
+.cart-item {display:flex; justify-content:space-between; gap:10px; border-bottom:1px solid #eee; padding:12px 0; font-size:14px;}
+.remove {background:#ff4d4d; color:white; border:none; padding:5px 9px; border-radius:6px; cursor:pointer;}
+.checkout {width:100%; background:#25D366; color:white; border:none; padding:14px; border-radius:10px; font-size:16px; font-weight:bold; cursor:pointer; margin-top:15px;}
+.info {display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; margin-top:40px;}
+.box {background:white; padding:22px; border-radius:14px; box-shadow:0 3px 14px rgba(0,0,0,.06); text-align:center;}
 .box h3 {margin-bottom:8px;}
 .box p {color:#666; font-size:14px; line-height:1.6;}
-.testi {background:#fff; border-radius:14px; padding:22px; box-shadow:0 3px 14px rgba(0,0,0,.06); margin-top:18px;}
+.testi {background:white; border-radius:14px; padding:22px; box-shadow:0 3px 14px rgba(0,0,0,.06); margin-top:18px;}
 .testi p {color:#555; line-height:1.7;}
-.testi strong {display:block; margin-top:8px; color:#111;}
-.testi span {color:#777; font-size:13px;}
-footer {background:#111; color:#fff; text-align:center; padding:28px 18px; margin-top:45px;}
-footer p {font-size:14px; color:#ccc; margin-top:7px;}
-.wa-float {position:fixed; right:18px; bottom:18px; background:#25D366; color:#fff; padding:14px 18px; border-radius:35px; font-weight:bold; box-shadow:0 4px 16px rgba(0,0,0,.25); z-index:20;}
-@media(max-width:600px){
-  header h1 {font-size:18px;}
-  nav a {margin-left:8px; font-size:12px;}
-  .hero h2 {font-size:28px;}
-  .card img {height:260px;}
-}
+.testi strong {display:block; margin-top:8px;}
+footer {background:#111; color:white; text-align:center; padding:28px 18px; margin-top:45px;}
+footer p {color:#ccc; font-size:14px; margin-top:7px;}
+.wa-float {position:fixed; right:18px; bottom:18px; background:#25D366; color:white; padding:14px 18px; border-radius:35px; font-weight:bold; z-index:20;}
 </style>
 </head>
 <body>
 
-<div class="promo">PROMO HARI INI: Diskon sampai 35% + Gratis ongkir untuk pembelian di atas Rp200.000</div>
-
 <header>
   <h1>LAVINA<span>SHOP</span></h1>
-  <nav>
-    <a href="#produk">Produk</a>
-    <a href="#keunggulan">Keunggulan</a>
-    <a href="#testimoni">Testimoni</a>
-    <a href="https://wa.me/6281234567890">Kontak</a>
-  </nav>
+  <button class="cart-btn" onclick="document.getElementById('keranjang').scrollIntoView({behavior:'smooth'})">
+    Keranjang (<span id="cartCount">0</span>)
+  </button>
 </header>
 
 <section class="hero">
   <h2>Fashion Kekinian, Harga Bersahabat</h2>
-  <p>Baju wanita dan pria terbaru, bahan nyaman, harga mulai Rp75 ribuan. COD Makassar & kirim ke Bandung, Jawa Timur, serta seluruh Indonesia.</p>
-  <a class="btn" href="#produk">Lihat Katalog</a>
+  <p>Toko baju online dari Bandung. Kirim ke Bandung, Jawa Timur, dan seluruh Indonesia.</p>
 </section>
 
-<div class="container" id="produk">
-  <h2 class="section-title">Katalog Terbaru</h2>
-  <p class="section-sub">Stok terbatas. Chat WhatsApp untuk cek ukuran dan warna yang masih tersedia.</p>
+<div class="container">
+  <h2 class="section-title">Katalog Produk</h2>
+  <p class="section-sub">Pilih produk, tentukan size dan jumlah, lalu checkout via WhatsApp.</p>
 
-  <div class="categories">
-    <span>Kaos</span>
-    <span>Blouse</span>
-    <span>Kemeja</span>
-    <span>Dress</span>
-    <span>Hoodie</span>
-    <span>Gamis</span>
-    <span>Jeans</span>
-    <span>Jaket</span>
-  </div>
+  <input class="search" id="searchInput" placeholder="Cari baju..." onkeyup="searchProduct()">
 
-  <div class="products">
+  <div class="products" id="productList">
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=700" alt="Kaos Polos Premium">
+    <div class="card product">
+      <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=700">
       <div class="card-body">
         <span class="badge">Basic</span>
         <h3>Kaos Polos Premium</h3>
-        <p>Kaos polos bahan katun lembut, cocok untuk dipakai harian.</p>
+        <p>Bahan katun lembut, adem untuk dipakai harian.</p>
         <div class="price">Rp75.000 <span class="old">Rp100.000</span></div>
-        <select><option>Size: M</option><option>Size: L</option><option>Size: XL</option><option>Size: XXL</option></select>
-        <a class="wa-btn" href="https://wa.me/6281234567890?text=Halo%20LAVINASHOP,%20saya%20mau%20order%20Kaos%20Polos%20Premium">Order via WhatsApp</a>
+        <select class="size"><option>M</option><option>L</option><option>XL</option><option>XXL</option></select>
+        <input type="number" class="qty" value="1" min="1">
+        <button class="add-btn" onclick="addToCart(this, 'Kaos Polos Premium', 75000)">Tambah ke Keranjang</button>
+        <a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20LAVINASHOP,%20saya%20mau%20order%20Kaos%20Polos%20Premium">Beli Langsung</a>
       </div>
     </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=700" alt="Kaos Oversize Premium">
+    <div class="card product">
+      <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=700">
       <div class="card-body">
         <span class="badge">Best Seller</span>
         <h3>Kaos Oversize Premium</h3>
-        <p>Bahan cotton combed 30s, adem dan tidak panas. Cocok untuk daily dan hangout.</p>
+        <p>Cotton combed 30s, adem, tidak panas, model kekinian.</p>
         <div class="price">Rp85.000 <span class="old">Rp120.000</span></div>
-        <select><option>Size: M</option><option>Size: L</option><option>Size: XL</option></select>
-        <a class="wa-btn" href="https://wa.me/6281234567890?text=Halo%20LAVINASHOP,%20saya%20mau%20order%20Kaos%20Oversize%20Premium">Order via WhatsApp</a>
+        <select class="size"><option>M</option><option>L</option><option>XL</option></select>
+        <input type="number" class="qty" value="1" min="1">
+        <button class="add-btn" onclick="addToCart(this, 'Kaos Oversize Premium', 85000)">Tambah ke Keranjang</button>
+        <a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20LAVINASHOP,%20saya%20mau%20order%20Kaos%20Oversize%20Premium">Beli Langsung</a>
       </div>
     </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=700" alt="Kaos Distro Pria">
+    <div class="card product">
+      <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=700">
       <div class="card-body">
         <span class="badge">Street Style</span>
         <h3>Kaos Distro Pria</h3>
-        <p>Kaos distro pria model santai, bahan adem dan cocok untuk outfit kasual sehari-hari.</p>
+        <p>Kaos distro pria model santai untuk outfit kasual.</p>
         <div class="price">Rp95.000 <span class="old">Rp130.000</span></div>
-        <select><option>Size: M</option><option>Size: L</option><option>Size: XL</option></select>
-        <a class="wa-btn" href="https://wa.me/6281234567890?text=Halo%20LAVINASHOP,%20saya%20mau%20order%20Kaos%20Distro%20Pria">Order via WhatsApp</
+        <select class="size"><option>M</option><option>L</option><option>XL</option></select>
+        <input type="number" class="qty" value="1" min="1">
+        <button class="add-btn" onclick="addToCart(this, 'Kaos Distro Pria', 95000)">Tambah ke Keranjang</button>
+        <a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20LAVINASHOP,%20saya%20mau%20order%20Kaos%20Distro%20Pria">Beli Langsung</a>
+      </div>
+    </div>
+
+    <div class="card product">
+      <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=700">
+      <div class="card-body">
+        <span class="badge">Wanita
