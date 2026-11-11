@@ -3,127 +3,216 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LAVINASHOP - 200 Koleksi Baju Bandung</title>
+<title>LAVINASHOP Bandung - 200 Produk</title>
 <style>
-* {margin:0; padding:0; box-sizing:border-box; font-family:Arial, Helvetica, sans-serif;}
+* {margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif;}
 body {background:#f5f5f5; color:#222;}
-a {text-decoration:none; color:inherit;}
-.topbar {background:#ee4d2d; color:white; padding:12px 18px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:20;}
-.topbar h1 {font-size:22px;}
-.topbar h1 span {font-weight:normal;}
-.cart-btn {background:white; color:#ee4d2d; border:none; padding:9px 15px; border-radius:4px; font-weight:bold; cursor:pointer;}
-.promo-bar {background:#fff3e0; color:#d35400; text-align:center; padding:9px; font-size:14px; font-weight:bold;}
-.hero {background:linear-gradient(135deg,#ee4d2d,#ff7337); color:white; text-align:center; padding:42px 20px;}
-.hero h2 {font-size:32px; margin-bottom:10px;}
-.container {max-width:1200px; margin:auto; padding:20px 14px;}
-.section-title {font-size:24px; margin:18px 0 8px; text-align:center; color:#ee4d2d; text-transform:uppercase;}
-.section-sub {text-align:center; color:#666; margin-bottom:16px;}
-.search {width:100%; max-width:600px; display:block; margin:0 auto 16px; padding:13px 16px; border:1px solid #ddd; border-radius:4px; outline:none;}
-.tabs {display:flex; justify-content:center; gap:10px; margin-bottom:18px; flex-wrap:wrap;}
-.tab-btn {background:white; border:1px solid #ffd9cf; color:#ee4d2d; padding:10px 18px; border-radius:25px; font-weight:bold; cursor:pointer;}
-.tab-btn.active {background:#ee4d2d; color:white; border-color:#ee4d2d;}
-.products {display:grid; grid-template-columns:repeat(auto-fill,minmax(185px,1fr)); gap:12px;}
-.card {background:white; border-radius:4px; overflow:hidden; box-shadow:0 1px 6px rgba(0,0,0,.08); position:relative; display:flex; flex-direction:column;}
-.card img {width:100%; aspect-ratio:4/5; object-fit:cover; object-position:center; background:#eee; display:block;}
-.discount {position:absolute; top:8px; right:8px; background:#ffe97a; color:#ee4d2d; font-size:12px; font-weight:bold; padding:5px 7px; border-radius:3px; z-index:2;}
+header {background:#ee4d2d; color:white; padding:16px; text-align:center;}
+header h1 {font-size:26px;}
+.container {max-width:1150px; margin:auto; padding:15px;}
+.judul {text-align:center; color:#ee4d2d; margin:18px 0 12px; text-transform:uppercase;}
+.note {text-align:center; color:#666; margin-bottom:15px;}
+.tabs {display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-bottom:18px;}
+.tab {background:white; border:1px solid #ffd9cf; color:#ee4d2d; padding:10px 18px; border-radius:25px; font-weight:bold; cursor:pointer;}
+.tab.active {background:#ee4d2d; color:white;}
+.search {width:100%; max-width:600px; display:block; margin:0 auto 18px; padding:12px; border:1px solid #ddd; border-radius:5px;}
+.products {display:grid; grid-template-columns:repeat(auto-fill,minmax(175px,1fr)); gap:12px;}
+.card {background:white; border-radius:6px; overflow:hidden; box-shadow:0 1px 6px rgba(0,0,0,.12); position:relative; display:flex; flex-direction:column;}
+.card img {width:100%; height:235px; object-fit:cover; display:block; background:#ddd;}
+.diskon {position:absolute; top:8px; right:8px; background:#ffe97a; color:#ee4d2d; font-size:12px; font-weight:bold; padding:4px 7px; border-radius:3px; z-index:2;}
 .card-body {padding:10px; display:flex; flex-direction:column; flex:1;}
-.card h3 {font-size:14px; line-height:1.4; font-weight:normal; min-height:40px;}
-.price {color:#ee4d2d; font-size:18px; font-weight:bold; margin-top:8px;}
-.old {text-decoration:line-through; color:#999; font-size:12px; margin-left:5px;}
-.meta {display:flex; justify-content:space-between; font-size:12px; color:#777; margin-top:7px;}
-.rating {color:#ff9800;}
-.location {font-size:12px; color:#888; margin-top:5px;}
-.free {display:inline-block; background:#e8f5e9; color:#2e7d32; font-size:11px; font-weight:bold; padding:3px 6px; border-radius:3px; margin-top:7px; width:max-content;}
-select, input[type=number] {width:100%; padding:8px; margin-top:8px; border:1px solid #ddd; border-radius:4px; font-size:13px;}
-.add-btn {width:100%; background:#ee4d2d; color:white; border:none; padding:10px; border-radius:4px; font-weight:bold; cursor:pointer; margin-top:9px;}
-.wa-btn {display:block; text-align:center; background:#25D366; color:white; padding:10px; border-radius:4px; font-weight:bold; margin-top:7px; font-size:14px;}
-.cart-box {background:white; padding:20px; border-radius:6px; box-shadow:0 1px 6px rgba(0,0,0,.08); margin-top:35px;}
-.cart-item {display:flex; justify-content:space-between; gap:10px; border-bottom:1px solid #eee; padding:12px 0; font-size:14px;}
-.remove {background:#ff4d4d; color:white; border:none; padding:6px 10px; border-radius:4px; cursor:pointer;}
-.checkout {width:100%; background:#ee4d2d; color:white; border:none; padding:14px; border-radius:4px; font-size:16px; font-weight:bold; cursor:pointer; margin-top:15px;}
-.info {display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:35px;}
-.box {background:white; padding:20px; border-radius:6px; box-shadow:0 1px 6px rgba(0,0,0,.06); text-align:center;}
-.box h3 {margin-bottom:8px; color:#ee4d2d;}
-.box p {color:#666; font-size:14px; line-height:1.6;}
-.testi {background:white; border-radius:6px; padding:18px; box-shadow:0 1px 6px rgba(0,0,0,.06); margin-top:14px;}
-.testi p {color:#555; line-height:1.7; font-size:14px;}
-.testi strong {display:block; margin-top:8px; font-size:14px;}
-footer {background:#222; color:white; text-align:center; padding:28px 18px; margin-top:40px;}
-footer p {color:#ccc; font-size:14px; margin-top:7px;}
-.wa-float {position:fixed; right:16px; bottom:16px; background:#25D366; color:white; padding:13px 18px; border-radius:30px; font-weight:bold; z-index:20;}
+.card h3 {font-size:14px; line-height:1.4; min-height:38px; font-weight:normal;}
+.harga {color:#ee4d2d; font-weight:bold; font-size:18px; margin:7px 0;}
+.lama {text-decoration:line-through; color:#999; font-size:12px;}
+.meta {font-size:12px; color:#777; display:flex; justify-content:space-between;}
+.lokasi {font-size:12px; color:#888; margin-top:5px;}
+select, input {width:100%; padding:8px; margin-top:8px; border:1px solid #ddd; border-radius:4px;}
+.tambah {width:100%; background:#ee4d2d; color:white; border:none; padding:10px; border-radius:4px; font-weight:bold; cursor:pointer; margin-top:9px;}
+.wa {display:block; text-align:center; background:#25D366; color:white; padding:10px; border-radius:4px; font-weight:bold; margin-top:7px; text-decoration:none;}
+.cart-box {background:white; padding:20px; border-radius:6px; margin-top:35px; box-shadow:0 1px 6px rgba(0,0,0,.08);}
+.cart-item {display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding:10px 0; font-size:14px;}
+.hapus {background:#ff4d4d; color:white; border:none; padding:6px 10px; border-radius:4px; cursor:pointer;}
+.checkout {width:100%; background:#ee4d2d; color:white; border:none; padding:14px; border-radius:4px; font-size:16px; font-weight:bold; cursor:pointer; margin-top:14px;}
+footer {background:#222; color:white; text-align:center; padding:24px; margin-top:35px;}
+footer p {color:#ccc; font-size:14px; margin-top:6px;}
+.wa-float {position:fixed; right:15px; bottom:15px; background:#25D366; color:white; padding:13px 18px; border-radius:30px; font-weight:bold; text-decoration:none; z-index:20;}
 @media(max-width:600px){
-  .topbar h1 {font-size:18px;}
-  .hero h2 {font-size:26px;}
   .products {grid-template-columns:repeat(2,1fr); gap:9px;}
-  .card h3 {font-size:13px;}
-  .price {font-size:16px;}
+  .card img {height:200px;}
 }
 </style>
 </head>
 <body>
 
-<div class="promo-bar">GRATIS ONGKIR XTRA + DISKON s.d. 40% Hari Ini</div>
-
-<header class="topbar">
-  <h1>LAVINA<span>SHOP</span></h1>
-  <button class="cart-btn" onclick="document.getElementById('keranjang').scrollIntoView({behavior:'smooth'})">
-    Keranjang (<span id="cartCount">0</span>)
-  </button>
+<header>
+<h1>LAVINASHOP</h1>
+<p>200 Koleksi Baju Kekinian Bandung</p>
 </header>
 
-<section class="hero">
-  <h2>200 Koleksi Baju Kekinian</h2>
-  <p>100 foto baju perempuan dan 100 foto baju laki-laki. Toko dari Bandung, kirim ke seluruh Indonesia.</p>
-</section>
-
 <div class="container">
-  <h2 class="section-title">Katalog ala Shopee</h2>
-  <p class="section-sub">Pilih kategori, cari produk, tambah ke keranjang, lalu checkout via WhatsApp.</p>
+<h2 class="judul">Katalog ala Shopee</h2>
+<p class="note">100 baju perempuan dan 100 baju laki-laki. Pilih produk lalu checkout via WhatsApp.</p>
 
-  <input class="search" id="searchInput" placeholder="Cari dress, kaos, hoodie, kemeja..." onkeyup="searchProduct()">
+<input class="search" id="cari" placeholder="Cari dress, kaos, hoodie, kemeja..." onkeyup="cariProduk()">
 
-  <div class="tabs">
-    <button class="tab-btn active" onclick="showCategory('perempuan', this)">Baju Perempuan (100)</button>
-    <button class="tab-btn" onclick="showCategory('laki', this)">Baju Laki-Laki (100)</button>
-  </div>
+<div class="tabs">
+<button class="tab active" onclick="tampil('perempuan',this)">Perempuan (100)</button>
+<button class="tab" onclick="tampil('laki',this)">Laki-Laki (100)</button>
+</div>
 
-  <div class="products" id="productList"></div>
+<div class="products" id="produk"></div>
 
-  <div class="cart-box" id="keranjang">
-    <h2>Keranjang Belanja</h2>
-    <div id="cartItems"><p style="color:#777; margin-top:10px;">Keranjang masih kosong.</p></div>
-    <h3 style="margin-top:15px;">Total: <span id="cartTotal">Rp0</span></h3>
-    <button class="checkout" onclick="checkoutWA()">Checkout via WhatsApp</button>
-  </div>
-
-  <div class="info">
-    <div class="box"><h3>Alamat Toko</h3><p>Jl. Braga No. 88, Bandung, Jawa Barat</p></div>
-    <div class="box"><h3>COD Bandung</h3><p>Bisa COD area Bandung tertentu. Konfirmasi lewat WhatsApp.</p></div>
-    <div class="box"><h3>Kirim Seluruh Indonesia</h3><p>Melayani pengiriman ke Jawa Timur dan kota lain di Indonesia.</p></div>
-  </div>
-
-  <h2 class="section-title">Penilaian Produk</h2>
-  <p class="section-sub">Testimoni pelanggan Bandung dan Jawa Timur</p>
-
-  <div class="testi"><p>"Dress Korean Style-nya bagus banget, bahannya jatuh dan tidak menerawang. Pengiriman ke Bandung cepat."</p><strong>★★★★★ - Nadia, Bandung</strong></div>
-  <div class="testi"><p>"Kaos oversize premiumnya adem dan tebal. Cocok buat kuliah di Bandung."</p><strong>★★★★★ - Rizky, Cimahi</strong></div>
-  <div class="testi"><p>"Hoodie-nya hangat dan modelnya kekinian. Admin fast respon, barang sampai Surabaya dalam 3 hari."</p><strong>★★★★★ - Salsa, Surabaya</strong></div>
-  <div class="testi"><p>"Kemeja flanelnya rapi dan nyaman dipakai harian. Jahitannya bagus."</p><strong>★★★★☆ - Fajar, Malang</strong></div>
-  <div class="testi"><p>"One set wanita ini praktis banget, tinggal pakai langsung kelihatan rapi."</p><strong>★★★★★ - Putri, Sidoarjo</strong></div>
-  <div class="testi"><p>"Kaos polos premiumnya enak dipakai, tidak melar setelah dicuci."</p><strong>★★★★★ - Budi, Kediri</strong></div>
+<div class="cart-box" id="keranjang">
+<h2>Keranjang Belanja</h2>
+<div id="isiKeranjang"><p style="color:#777;margin-top:10px;">Keranjang masih kosong.</p></div>
+<h3 style="margin-top:14px;">Total: <span id="total">Rp0</span></h3>
+<button class="checkout" onclick="checkoutWA()">Checkout via WhatsApp</button>
+</div>
 </div>
 
 <footer>
-  <h2>LAVINASHOP</h2>
-  <p>Toko Baju Kekinian Bandung</p>
-  <p>Alamat: Jl. Braga No. 88, Bandung, Jawa Barat</p>
-  <p>Melayani pengiriman ke Bandung, Jawa Timur, dan seluruh Indonesia</p>
-  <p>Instagram: @lavinashop | WhatsApp: 0878-3440-3060</p>
-  <p>© 2026 LAVINASHOP</p>
+<h2>LAVINASHOP</h2>
+<p>Toko Baju Kekinian Bandung</p>
+<p>Alamat: Jl. Braga No. 88, Bandung, Jawa Barat</p>
+<p>Melayani pengiriman ke Bandung, Jawa Timur, dan seluruh Indonesia</p>
+<p>WhatsApp: 0878-3440-3060 | Instagram: @lavinashop</p>
 </footer>
 
 <a class="wa-float" href="https://wa.me/6287834403060?text=Halo%20LAVINASHOP,%20saya%20mau%20tanya%20produk">Chat WhatsApp</a>
 
 <script>
-const femalePhotos = [
-"photo-1496747611176-843222e1e57c","photo-1515886657613-9f3515b0c78f","photo-1483985988355-763728e1935b","photo-1490481651871-ab68de25d43d","photo-1509631179647-0177331693ae","photo-1529139574466-a303027c1d8b","photo-1581044777550-4cfa60707c03","photo-1551163943-3f6a855d1153","photo-1594633312681-425c7b97ccd1","photo-1551163943-3f6a855d1153","photo-1572804013309-59a88b7e92f1","photo-1583496661160-fb5886a13d44","photo-1595777457583-95e059d581b8","photo-1610030469668-8e9f1d695485","photo-1585487000160-6ebcf
+const fotoPerempuan = [
+"https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=700&q=80&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=700&q=80&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1483985988355-763728e1935b?w=700&q=80&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=700&q=80&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1509631179647-0177331693ae?w=700&q=80&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=700&q=80&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=700&q=80&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=700&q=80&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1583496661160-fb5886a13d44?w=700&q=80&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=700&q=80&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1610030469668-8e9f1d695485?w=700&q=80&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=700&q=80&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=700&q=80&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=700&q=80&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=700&q=80&auto=format&fit=crop"
+];
+
+const fotoLaki = [
+"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=700&q=80&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=700&q=80&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=700&q=80&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=700&q=80&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=700&q=80&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=700&q=80&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=700&q=80&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1603252109303-2751441dd157?w=700&q=80&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1551028719-00167b16eac5?w=700&q=80&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=700&q=80&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1542272604-787c3835535d?w=700&q=80&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1517438476312-10d79c077509?w=700&q=80&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=700&q=80&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1562157873-818bc0726f68?w=700&q=80&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=700&q=80&auto=format&fit=crop"
+];
+
+const namaPerempuan = ["Dress Korean Style","Blouse Wanita","Tunik Hijab Friendly","Gamis Wanita","Setelan Wanita","Outer Cardigan","Blazer Wanita","Kaos Wanita Crop Top","Kemeja Wanita","Sweater Wanita","Hoodie Wanita Oversize","Rok Plisket Wanita","Celana Kulot Wanita","Dress Pesta Wanita","Piyama Set Wanita","Atasan Wanita Kekinian","Cardigan Rajut Wanita","Dress Floral Wanita","Blouse Lengan Balon","Kaos Oversize Wanita"];
+const namaLaki = ["Kaos Polos Pria","Kaos Oversize Pria","Kaos Distro Pria","Kemeja Flanel Pria","Kemeja Linen Pria","Sweater Pria","Hoodie Pria Oversize","Jaket Denim Pria","Jaket Parasut Pria","Celana Cargo Pria","Jeans Pria Slim Fit","Kaos Couple Pria","Kemeja Batik Pria","Polo Shirt Pria","Celana Chino Pria","Kaos Street Style Pria","Flanel Oversize Pria","Hoodie Zipper Pria","Kaos Vintage Pria","Kemeja Formal Pria"];
+
+let keranjang = [];
+
+function rupiah(n){ return "Rp" + n.toLocaleString("id-ID"); }
+
+function tampil(kategori, tombol){
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+  tombol.classList.add("active");
+
+  const daftarFoto = kategori === "perempuan" ? fotoPerempuan : fotoLaki;
+  const daftarNama = kategori === "perempuan" ? namaPerempuan : namaLaki;
+  const kataFoto = kategori === "perempuan" ? "woman,fashion" : "man,fashion";
+  let html = "";
+
+  for(let i=0; i<100; i++){
+    const foto = daftarFoto[i % daftarFoto.length];
+    const backup = "https://loremflickr.com/600/750/" + kataFoto + "?lock=" + (i+1);
+    const nama = daftarNama[i % daftarNama.length] + " " + (i+1);
+    const harga = 69000 + ((i * 7000) % 140000);
+    const hargaLama = Math.round(harga * 1.35 / 1000) * 1000;
+    const diskon = Math.round((1 - harga / hargaLama) * 100);
+    const rating = (4.7 + ((i % 4) * 0.1)).toFixed(1);
+    const terjual = 100 + ((i * 43) % 4500);
+
+    html += `
+    <div class="card product">
+      <span class="diskon">-${diskon}%</span>
+      <img src="${foto}" alt="${nama}" onerror="this.onerror=null;this.src='${backup}'">
+      <div class="card-body">
+        <h3>${nama} Premium Bandung</h3>
+        <div class="harga">${rupiah(harga)} <span class="lama">${rupiah(hargaLama)}</span></div>
+        <div class="meta"><span>★ ${rating}</span><span>Terjual ${terjual}</span></div>
+        <div class="lokasi">Bandung</div>
+        <select class="size"><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+        <input type="number" class="qty" value="1" min="1">
+        <button class="tambah" onclick="tambahKeranjang(this,'${nama}',${harga})">+ Keranjang</button>
+        <a class="wa" href="https://wa.me/6287834403060?text=Halo%20saya%20mau%20order%20${encodeURIComponent(nama)}">Beli Sekarang</a>
+      </div>
+    </div>`;
+  }
+  document.getElementById("produk").innerHTML = html;
+}
+
+function tambahKeranjang(tombol, nama, harga){
+  const card = tombol.closest(".card");
+  const size = card.querySelector(".size").value;
+  const qty = parseInt(card.querySelector(".qty").value) || 1;
+  keranjang.push({nama, harga, size, qty});
+  tampilKeranjang();
+  alert(nama + " ditambahkan ke keranjang");
+}
+
+function tampilKeranjang(){
+  const box = document.getElementById("isiKeranjang");
+  const totalEl = document.getElementById("total");
+  if(keranjang.length === 0){
+    box.innerHTML = '<p style="color:#777;margin-top:10px;">Keranjang masih kosong.</p>';
+    totalEl.innerText = "Rp0";
+    return;
+  }
+  let total = 0, html = "";
+  keranjang.forEach((item, i) => {
+    const sub = item.harga * item.qty;
+    total += sub;
+    html += `<div class="cart-item"><div><b>${item.nama}</b><br>Size ${item.size} | Qty ${item.qty}<br>${rupiah(sub)}</div><button class="hapus" onclick="hapus(${i})">Hapus</button></div>`;
+  });
+  box.innerHTML = html;
+  totalEl.innerText = rupiah(total);
+}
+
+function hapus(i){ keranjang.splice(i,1); tampilKeranjang(); }
+
+function checkoutWA(){
+  if(keranjang.length === 0){ alert("Keranjang masih kosong"); return; }
+  let total = 0;
+  let pesan = "Halo LAVINASHOP, saya mau order:%0A%0A";
+  keranjang.forEach(item => {
+    const sub = item.harga * item.qty;
+    total += sub;
+    pesan += "- " + item.nama + "%0A Size: " + item.size + "%0A Qty: " + item.qty + "%0A Subtotal: " + rupiah(sub) + "%0A%0A";
+  });
+  pesan += "Total: " + rupiah(total);
+  window.open("https://wa.me/6287834403060?text=" + pesan, "_blank");
+}
+
+function cariProduk(){
+  const kata = document.getElementById("cari").value.toLowerCase();
+  document.querySelectorAll(".product").forEach(p => {
+    p.style.display = p.innerText.toLowerCase().includes(kata) ? "flex" : "none";
+  });
+}
+
+tampil("perempuan", document.querySelector(".tab"));
+</script>
+
+</body>
+</html>
