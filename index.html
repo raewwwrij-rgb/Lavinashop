@@ -3,100 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LAVINASHOP - Katalog Produk</title>
+<title>LAVINASHOP - Toko Baju Kekinian</title>
+<meta name="description" content="LAVINASHOP menjual baju wanita dan pria kekinian. Kirim ke Makassar, Bandung, Jawa Timur, dan seluruh Indonesia.">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#f5f5f5;color:#222}
-header{background:#111;color:#fff;padding:20px;text-align:center}
-header h1{font-size:28px;letter-spacing:1px}
-header h1 span{color:#ff4d6d}
-nav{margin-top:10px}
-nav a{color:#fff;text-decoration:none;margin:0 10px;font-size:14px}
-.hero{background:#ff4d6d;color:#fff;text-align:center;padding:40px 20px}
-.hero h2{font-size:32px;margin-bottom:10px}
-.container{max-width:1100px;margin:auto;padding:20px}
-.title{text-align:center;margin:20px 0;font-size:24px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.1)}
-.card img{width:100%;height:200px;object-fit:cover;background:#ddd}
-.card-body{padding:15px}
-.card h3{font-size:18px;margin-bottom:5px}
-.price{color:#ff4d6d;font-weight:bold;font-size:20px;margin:8px 0}
-.wa-btn{display:block;text-align:center;background:#25D366;color:#fff;padding:10px;border-radius:8px;text-decoration:none;font-weight:bold;margin-top:10px}
-table{width:100%;border-collapse:collapse;background:#fff;margin-top:20px;border-radius:10px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.08)}
-th{background:#111;color:#fff;padding:12px;text-align:left}
-td{padding:12px;border-bottom:1px solid #eee}
-footer{background:#111;color:#fff;text-align:center;padding:20px;margin-top:30px}
+* {margin:0; padding:0; box-sizing:border-box; font-family:Arial, Helvetica, sans-serif;}
+body {background:#fff7fa; color:#222;}
+a {text-decoration:none;}
+header {background:#111; color:#fff; padding:14px 20px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:10;}
+header h1 {font-size:22px; letter-spacing:1px;}
+header h1 span {color:#ff5a8a;}
+nav a {color:#fff; margin-left:14px; font-size:14px;}
+.hero {background:linear-gradient(135deg,#ff5a8a,#ff9ac2); color:#fff; text-align:center; padding:75px 20px;}
+.hero h2 {font-size:36px; margin-bottom:12px;}
+.hero p {font-size:17px; opacity:.95;}
+.btn {display:inline-block; background:#111; color:#fff; padding:13px 28px; border-radius:30px; font-weight:bold; margin-top:22px;}
+.promo {background:#111; color:#fff; text-align:center; padding:10px; font-size:14px;}
+.container {max-width:1150px; margin:auto; padding:25px 18px;}
+.section-title {text-align:center; font-size:28px; margin:25px 0 8px;}
+.section-sub {text-align:center; color:#666; margin-bottom:25px;}
+.categories {display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:30px;}
+.categories span {background:#fff; border:1px solid #ffd3e2; color:#ff4f88; padding:9px 16px; border-radius:25px; font-size:14px; font-weight:bold;}
+.products {display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:22px;}
+.card {background:#fff; border-radius:14px; overflow:hidden; box-shadow:0 3px 14px rgba(0,0,0,.08);}
+.card img {width:100%; height:300px; object-fit:cover;}
+.card-body {padding:16px;}
+.badge {display:inline-block; background:#ffe3ee; color:#e83e7a; font-size:12px; font-weight:bold; padding:5px 9px; border-radius:20px; margin-bottom:8px;}
+.card h3 {font-size:18px; margin-bottom:7px;}
+.card p {color:#666; font-size:14px; line-height:1.5; min-height:42px;}
+.price {color:#ff4f88; font-weight:bold; font-size:20px; margin:10px 0 4px;}
+.old {text-decoration:line-through; color:#999; font-size:14px; margin-left:6px;}
+select {width:100%; padding:9px; border-radius:8px; border:1px solid #ddd; margin:10px 0;}
+.wa-btn {display:block; text-align:center; background:#25D366; color:#fff; padding:11px; border-radius:9px; font-weight:bold;}
+.info {display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; margin-top:45px;}
+.box {background:#fff; padding:22px; border-radius:14px; box-shadow:0 3px 14px rgba(0,0,0,.06); text-align:center;}
+.box h3 {margin-bottom:8px;}
+.box p {color:#666; font-size:14px; line-height:1.6;}
+.testi {background:#fff; border-radius:14px; padding:22px; box-shadow:0 3px 14px rgba(0,0,0,.06); margin-top:18px;}
+.testi p {color:#555; line-height:1.7;}
+.testi strong {display:block; margin-top:8px; color:#111;}
+.testi span {color:#777; font-size:13px;}
+footer {background:#111; color:#fff; text-align:center; padding:28px 18px; margin-top:45px;}
+footer p {font-size:14px; color:#ccc; margin-top:7px;}
+.wa-float {position:fixed; right:18px; bottom:18px; background:#25D366; color:#fff; padding:14px 18px; border-radius:35px; font-weight:bold; box-shadow:0 4px 16px rgba(0,0,0,.25); z-index:20;}
+@media(max-width:600px){
+  header h1 {font-size:18px;}
+  nav a {margin-left:8px; font-size:12px;}
+  .hero h2 {font-size:28px;}
+  .card img {height:260px;}
+}
 </style>
 </head>
 <body>
 
+<div class="promo">PROMO HARI INI: Diskon sampai 35% + Gratis ongkir untuk pembelian di atas Rp200.000</div>
+
 <header>
-<h1>LAVINA<span>SHOP</span></h1>
-<nav>
-<a href="#katalog">Katalog</a>
-<a href="#harga">Daftar Harga</a>
-<a href="https://wa.me/6287834403060">Hubungi</a>
-</nav>
+  <h1>LAVINA<span>SHOP</span></h1>
+  <nav>
+    <a href="#produk">Produk</a>
+    <a href="#keunggulan">Keunggulan</a>
+    <a href="#testimoni">Testimoni</a>
+    <a href="https://wa.me/6281234567890">Kontak</a>
+  </nav>
 </header>
 
-<div class="hero">
-<h2>Katalog Produk</h2>
-<p>Fashion Kekinian, Harga Bersahabat - COD Makassar & Kirim ke Luar Kota</p>
-</div>
+<section class="hero">
+  <h2>Fashion Kekinian, Harga Bersahabat</h2>
+  <p>Baju wanita dan pria terbaru, bahan nyaman, harga mulai Rp75 ribuan. COD Makassar & kirim ke Bandung, Jawa Timur, serta seluruh Indonesia.</p>
+  <a class="btn" href="#produk">Lihat Katalog</a>
+</section>
 
-<div class="container" id="katalog">
-<h2 class="title">Produk Kami</h2>
-<div class="grid">
+<div class="container" id="produk">
+  <h2 class="section-title">Katalog Terbaru</h2>
+  <p class="section-sub">Stok terbatas. Chat WhatsApp untuk cek ukuran dan warna yang masih tersedia.</p>
 
-<div class="card"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600" alt="Kaos"><div class="card-body"><h3>Kaos Oversize Wanita</h3><p>Bahan adem, nyaman dipakai.</p><p class="price">Rp 100.000 - Rp 150.000</p><a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20saya%20mau%20order%20Kaos%20Oversize%20Wanita">Order WA</a></div></div>
+  <div class="categories">
+    <span>Kaos</span>
+    <span>Blouse</span>
+    <span>Kemeja</span>
+    <span>Dress</span>
+    <span>Hoodie</span>
+    <span>Gamis</span>
+    <span>Jeans</span>
+    <span>Jaket</span>
+  </div>
 
-<div class="card"><img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600" alt="Dress"><div class="card-body"><h3>Dress Floral</h3><p>Dress cantik motif floral.</p><p class="price">Rp 100.000 - Rp 150.000</p><a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20saya%20mau%20order%20Dress%20Floral">Order WA</a></div></div>
+  <div class="products">
 
-<div class="card"><img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600" alt="Kemeja"><div class="card-body"><h3>Kemeja Linen</h3><p>Kemeja linen premium.</p><p class="price">Rp 100.000 - Rp 150.000</p><a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20saya%20mau%20order%20Kemeja%20Linen">Order WA</a></div></div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=700" alt="Kaos Polos Premium">
+      <div class="card-body">
+        <span class="badge">Basic</span>
+        <h3>Kaos Polos Premium</h3>
+        <p>Kaos polos bahan katun lembut, cocok untuk dipakai harian.</p>
+        <div class="price">Rp75.000 <span class="old">Rp100.000</span></div>
+        <select><option>Size: M</option><option>Size: L</option><option>Size: XL</option><option>Size: XXL</option></select>
+        <a class="wa-btn" href="https://wa.me/6281234567890?text=Halo%20LAVINASHOP,%20saya%20mau%20order%20Kaos%20Polos%20Premium">Order via WhatsApp</a>
+      </div>
+    </div>
 
-<div class="card"><img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=600" alt="Jeans"><div class="card-body"><h3>Celana Jeans Highwaist</h3><p>Jeans stretch highwaist.</p><p class="price">Rp 100.000 - Rp 150.000</p><a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20saya%20mau%20order%20Celana%20Jeans%20Highwaist">Order WA</a></div></div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=700" alt="Kaos Oversize Premium">
+      <div class="card-body">
+        <span class="badge">Best Seller</span>
+        <h3>Kaos Oversize Premium</h3>
+        <p>Bahan cotton combed 30s, adem dan tidak panas. Cocok untuk daily dan hangout.</p>
+        <div class="price">Rp85.000 <span class="old">Rp120.000</span></div>
+        <select><option>Size: M</option><option>Size: L</option><option>Size: XL</option></select>
+        <a class="wa-btn" href="https://wa.me/6281234567890?text=Halo%20LAVINASHOP,%20saya%20mau%20order%20Kaos%20Oversize%20Premium">Order via WhatsApp</a>
+      </div>
+    </div>
 
-<div class="card"><img src="https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=600" alt="Jaket"><div class="card-body"><h3>Jaket Denim</h3><p>Jaket denim stylish.</p><p class="price">Rp 100.000 - Rp 150.000</p><a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20saya%20mau%20order%20Jaket%20Denim">Order WA</a></div></div>
-
-<div class="card"><img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600" alt="Tas"><div class="card-body"><h3>Tas Selempang Wanita</h3><p>Tas selempang kekinian.</p><p class="price">Rp 100.000 - Rp 150.000</p><a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20saya%20mau%20order%20Tas%20Selempang%20Wanita">Order WA</a></div></div>
-
-<div class="card"><img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=600" alt="Tote Bag"><div class="card-body"><h3>Tas Tote Bag Kanvas</h3><p>Tote bag kanvas kuat.</p><p class="price">Rp 100.000 - Rp 150.000</p><a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20saya%20mau%20order%20Tas%20Tote%20Bag">Order WA</a></div></div>
-
-<div class="card"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600" alt="Sneakers"><div class="card-body"><h3>Sneakers Putih</h3><p>Sneakers ringan dan stylish.</p><p class="price">Rp 100.000 - Rp 150.000</p><a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20saya%20mau%20order%20Sneakers%20Putih">Order WA</a></div></div>
-
-<div class="card"><img src="https://images.unsplash.com/photo-1603487742131-4160ec999306?w=600" alt="Sandal"><div class="card-body"><h3>Sepatu Sandal Wanita</h3><p>Sandal nyaman harian.</p><p class="price">Rp 100.000 - Rp 150.000</p><a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20saya%20mau%20order%20Sepatu%20Sandal%20Wanita">Order WA</a></div></div>
-
-<div class="card"><img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600" alt="Kacamata"><div class="card-body"><h3>Kacamata Hitam Fashion</h3><p>Kacamata fashion anti silau.</p><p class="price">Rp 100.000 - Rp 150.000</p><a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20saya%20mau%20order%20Kacamata%20Hitam">Order WA</a></div></div>
-
-<div class="card"><img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=600" alt="Jam"><div class="card-body"><h3>Jam Tangan Wanita</h3><p>Jam tangan elegan.</p><p class="price">Rp 100.000 - Rp 150.000</p><a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20saya%20mau%20order%20Jam%20Tangan%20Wanita">Order WA</a></div></div>
-
-<div class="card"><img src="https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=600" alt="Hijab"><div class="card-body"><h3>Hijab Segi Empat Premium</h3><p>Hijab premium lembut.</p><p class="price">Rp 100.000 - Rp 150.000</p><a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20saya%20mau%20order%20Hijab%20Segi%20Empat">Order WA</a></div></div>
-
-</div>
-
-<h2 class="title" id="harga">Daftar Harga</h2>
-<table>
-<tr><th>Nama Produk</th><th>Harga</th><th>Stok</th></tr>
-<tr><td>Kaos Oversize Wanita</td><td>Rp 100.000 - Rp 150.000</td><td>Ready</td></tr>
-<tr><td>Dress Floral</td><td>Rp 100.000 - Rp 150.000</td><td>Ready</td></tr>
-<tr><td>Kemeja Linen</td><td>Rp 100.000 - Rp 150.000</td><td>Ready</td></tr>
-<tr><td>Celana Jeans Highwaist</td><td>Rp 100.000 - Rp 150.000</td><td>Ready</td></tr>
-<tr><td>Jaket Denim</td><td>Rp 100.000 - Rp 150.000</td><td>Ready</td></tr>
-<tr><td>Tas Selempang Wanita</td><td>Rp 100.000 - Rp 150.000</td><td>Ready</td></tr>
-<tr><td>Tas Tote Bag Kanvas</td><td>Rp 100.000 - Rp 150.000</td><td>Ready</td></tr>
-<tr><td>Sneakers Putih</td><td>Rp 100.000 - Rp 150.000</td><td>Ready</td></tr>
-<tr><td>Sepatu Sandal Wanita</td><td>Rp 100.000 - Rp 150.000</td><td>Ready</td></tr>
-<tr><td>Kacamata Hitam Fashion</td><td>Rp 100.000 - Rp 150.000</td><td>Ready</td></tr>
-<tr><td>Jam Tangan Wanita</td><td>Rp 100.000 - Rp 150.000</td><td>Ready</td></tr>
-<tr><td>Hijab Segi Empat Premium</td><td>Rp 100.000 - Rp 150.000</td><td>Ready</td></tr>
-</table>
-</div>
-
-<footer>
-<p>&copy; 2026 LAVINASHOP Bandung</p>
-<p>Order via WhatsApp: 087834403060</p>
-</footer>
-
-</body>
-</html>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=700" alt="Kaos Distro Pria">
+      <div class="card-body">
+        <span class="badge">Street Style</span>
+        <h3>Kaos Distro Pria</h3>
+        <p>Kaos distro pria model santai, bahan adem dan cocok untuk outfit kasual sehari-hari.</p>
+        <div class="price">Rp95.000 <span class="old">Rp130.000</span></div>
+        <select><option>Size: M</option><option>Size: L</option><option>Size: XL</option></select>
+        <a class="wa-btn" href="https://wa.me/6281234567890?text=Halo%20LAVINASHOP,%20saya%20mau%20order%20Kaos%20Distro%20Pria">Order via WhatsApp</
