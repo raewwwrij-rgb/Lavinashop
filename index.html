@@ -3,34 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LAVINASHOP - Toko Baju Online Bandung</title>
+<title>LAVINASHOP - 200 Koleksi Baju Bandung</title>
 <style>
 * {margin:0; padding:0; box-sizing:border-box; font-family:Arial, Helvetica, sans-serif;}
 body {background:#f5f5f5; color:#222;}
 a {text-decoration:none; color:inherit;}
 .topbar {background:#ee4d2d; color:white; padding:12px 18px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:20;}
-.topbar h1 {font-size:22px; letter-spacing:1px;}
+.topbar h1 {font-size:22px;}
 .topbar h1 span {font-weight:normal;}
 .cart-btn {background:white; color:#ee4d2d; border:none; padding:9px 15px; border-radius:4px; font-weight:bold; cursor:pointer;}
 .promo-bar {background:#fff3e0; color:#d35400; text-align:center; padding:9px; font-size:14px; font-weight:bold;}
-.hero {background:linear-gradient(135deg,#ee4d2d,#ff7337); color:white; text-align:center; padding:45px 20px;}
+.hero {background:linear-gradient(135deg,#ee4d2d,#ff7337); color:white; text-align:center; padding:42px 20px;}
 .hero h2 {font-size:32px; margin-bottom:10px;}
-.hero p {font-size:16px;}
 .container {max-width:1200px; margin:auto; padding:20px 14px;}
-.section-title {font-size:24px; margin:20px 0 8px; text-align:center; color:#ee4d2d; text-transform:uppercase;}
-.section-sub {text-align:center; color:#666; margin-bottom:18px;}
-.search {width:100%; max-width:600px; display:block; margin:0 auto 22px; padding:13px 16px; border:1px solid #ddd; border-radius:4px; outline:none;}
-.products {display:grid; grid-template-columns:repeat(auto-fill,minmax(190px,1fr)); gap:12px;}
+.section-title {font-size:24px; margin:18px 0 8px; text-align:center; color:#ee4d2d; text-transform:uppercase;}
+.section-sub {text-align:center; color:#666; margin-bottom:16px;}
+.search {width:100%; max-width:600px; display:block; margin:0 auto 16px; padding:13px 16px; border:1px solid #ddd; border-radius:4px; outline:none;}
+.tabs {display:flex; justify-content:center; gap:10px; margin-bottom:18px; flex-wrap:wrap;}
+.tab-btn {background:white; border:1px solid #ffd9cf; color:#ee4d2d; padding:10px 18px; border-radius:25px; font-weight:bold; cursor:pointer;}
+.tab-btn.active {background:#ee4d2d; color:white; border-color:#ee4d2d;}
+.products {display:grid; grid-template-columns:repeat(auto-fill,minmax(185px,1fr)); gap:12px;}
 .card {background:white; border-radius:4px; overflow:hidden; box-shadow:0 1px 6px rgba(0,0,0,.08); position:relative; display:flex; flex-direction:column;}
-.card img {width:100%; height:230px; object-fit:cover;}
-.discount {position:absolute; top:8px; right:8px; background:#ffe97a; color:#ee4d2d; font-size:12px; font-weight:bold; padding:5px 7px; border-radius:3px;}
+.card img {width:100%; aspect-ratio:4/5; object-fit:cover; object-position:center; background:#eee; display:block;}
+.discount {position:absolute; top:8px; right:8px; background:#ffe97a; color:#ee4d2d; font-size:12px; font-weight:bold; padding:5px 7px; border-radius:3px; z-index:2;}
 .card-body {padding:10px; display:flex; flex-direction:column; flex:1;}
 .card h3 {font-size:14px; line-height:1.4; font-weight:normal; min-height:40px;}
 .price {color:#ee4d2d; font-size:18px; font-weight:bold; margin-top:8px;}
 .old {text-decoration:line-through; color:#999; font-size:12px; margin-left:5px;}
-.meta {display:flex; justify-content:space-between; align-items:center; font-size:12px; color:#777; margin-top:7px;}
+.meta {display:flex; justify-content:space-between; font-size:12px; color:#777; margin-top:7px;}
 .rating {color:#ff9800;}
-.sold {color:#666;}
 .location {font-size:12px; color:#888; margin-top:5px;}
 .free {display:inline-block; background:#e8f5e9; color:#2e7d32; font-size:11px; font-weight:bold; padding:3px 6px; border-radius:3px; margin-top:7px; width:max-content;}
 select, input[type=number] {width:100%; padding:8px; margin-top:8px; border:1px solid #ddd; border-radius:4px; font-size:13px;}
@@ -49,12 +50,11 @@ select, input[type=number] {width:100%; padding:8px; margin-top:8px; border:1px 
 .testi strong {display:block; margin-top:8px; font-size:14px;}
 footer {background:#222; color:white; text-align:center; padding:28px 18px; margin-top:40px;}
 footer p {color:#ccc; font-size:14px; margin-top:7px;}
-.wa-float {position:fixed; right:16px; bottom:16px; background:#25D366; color:white; padding:13px 18px; border-radius:30px; font-weight:bold; z-index:20; box-shadow:0 3px 12px rgba(0,0,0,.25);}
+.wa-float {position:fixed; right:16px; bottom:16px; background:#25D366; color:white; padding:13px 18px; border-radius:30px; font-weight:bold; z-index:20;}
 @media(max-width:600px){
   .topbar h1 {font-size:18px;}
   .hero h2 {font-size:26px;}
   .products {grid-template-columns:repeat(2,1fr); gap:9px;}
-  .card img {height:190px;}
   .card h3 {font-size:13px;}
   .price {font-size:16px;}
 }
@@ -62,7 +62,7 @@ footer p {color:#ccc; font-size:14px; margin-top:7px;}
 </head>
 <body>
 
-<div class="promo-bar">GRATIS ONGKIR XTRA + DISKON s.d. 35% Hari Ini</div>
+<div class="promo-bar">GRATIS ONGKIR XTRA + DISKON s.d. 40% Hari Ini</div>
 
 <header class="topbar">
   <h1>LAVINA<span>SHOP</span></h1>
@@ -72,243 +72,22 @@ footer p {color:#ccc; font-size:14px; margin-top:7px;}
 </header>
 
 <section class="hero">
-  <h2>Fashion Kekinian Harga Shopee</h2>
-  <p>Toko dari Bandung, kirim ke seluruh Indonesia. Rating 4.9, pengiriman cepat, packing aman.</p>
+  <h2>200 Koleksi Baju Kekinian</h2>
+  <p>100 foto baju perempuan dan 100 foto baju laki-laki. Toko dari Bandung, kirim ke seluruh Indonesia.</p>
 </section>
 
 <div class="container">
-  <h2 class="section-title">Produk Pilihan Untukmu</h2>
-  <p class="section-sub">Katalog gaya Shopee: diskon, rating, terjual, dan lokasi toko Bandung.</p>
+  <h2 class="section-title">Katalog ala Shopee</h2>
+  <p class="section-sub">Pilih kategori, cari produk, tambah ke keranjang, lalu checkout via WhatsApp.</p>
 
-  <input class="search" id="searchInput" placeholder="Cari kaos, dress, hoodie, gamis..." onkeyup="searchProduct()">
+  <input class="search" id="searchInput" placeholder="Cari dress, kaos, hoodie, kemeja..." onkeyup="searchProduct()">
 
-  <div class="products" id="productList">
-
-    <div class="card product">
-      <span class="discount">-25%</span>
-      <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=700">
-      <div class="card-body">
-        <h3>Kaos Polos Premium Cotton Combed 30s Pria Wanita</h3>
-        <div class="price">Rp75.000 <span class="old">Rp100.000</span></div>
-        <div class="meta"><span class="rating">★ 4.9</span><span class="sold">Terjual 2,4rb</span></div>
-        <div class="location">Bandung</div>
-        <span class="free">Gratis Ongkir</span>
-        <select class="size"><option>M</option><option>L</option><option>XL</option><option>XXL</option></select>
-        <input type="number" class="qty" value="1" min="1">
-        <button class="add-btn" onclick="addToCart(this, 'Kaos Polos Premium', 75000)">+ Keranjang</button>
-        <a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20LAVINASHOP,%20saya%20mau%20order%20Kaos%20Polos%20Premium">Beli Sekarang</a>
-      </div>
-    </div>
-
-    <div class="card product">
-      <span class="discount">-29%</span>
-      <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=700">
-      <div class="card-body">
-        <h3>Kaos Oversize Premium Korean Style Unisex</h3>
-        <div class="price">Rp85.000 <span class="old">Rp120.000</span></div>
-        <div class="meta"><span class="rating">★ 4.9</span><span class="sold">Terjual 3,1rb</span></div>
-        <div class="location">Bandung</div>
-        <span class="free">Gratis Ongkir</span>
-        <select class="size"><option>M</option><option>L</option><option>XL</option></select>
-        <input type="number" class="qty" value="1" min="1">
-        <button class="add-btn" onclick="addToCart(this, 'Kaos Oversize Premium', 85000)">+ Keranjang</button>
-        <a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20LAVINASHOP,%20saya%20mau%20order%20Kaos%20Oversize%20Premium">Beli Sekarang</a>
-      </div>
-    </div>
-
-    <div class="card product">
-      <span class="discount">-27%</span>
-      <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=700">
-      <div class="card-body">
-        <h3>Kaos Distro Pria Street Style Bahan Adem</h3>
-        <div class="price">Rp95.000 <span class="old">Rp130.000</span></div>
-        <div class="meta"><span class="rating">★ 4.8</span><span class="sold">Terjual 1,8rb</span></div>
-        <div class="location">Bandung</div>
-        <span class="free">Gratis Ongkir</span>
-        <select class="size"><option>M</option><option>L</option><option>XL</option></select>
-        <input type="number" class="qty" value="1" min="1">
-        <button class="add-btn" onclick="addToCart(this, 'Kaos Distro Pria', 95000)">+ Keranjang</button>
-        <a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20LAVINASHOP,%20saya%20mau%20order%20Kaos%20Distro%20Pria">Beli Sekarang</a>
-      </div>
-    </div>
-
-    <div class="card product">
-      <span class="discount">-27%</span>
-      <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=700">
-      <div class="card-body">
-        <h3>Blouse Wanita Kerja Kuliah Bahan Ringan Adem</h3>
-        <div class="price">Rp99.000 <span class="old">Rp135.000</span></div>
-        <div class="meta"><span class="rating">★ 4.9</span><span class="sold">Terjual 956</span></div>
-        <div class="location">Bandung</div>
-        <span class="free">Gratis Ongkir</span>
-        <select class="size"><option>S</option><option>M</option><option>L</option></select>
-        <input type="number" class="qty" value="1" min="1">
-        <button class="add-btn" onclick="addToCart(this, 'Blouse Wanita', 99000)">+ Keranjang</button>
-        <a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20LAVINASHOP,%20saya%20mau%20order%20Blouse%20Wanita">Beli Sekarang</a>
-      </div>
-    </div>
-
-    <div class="card product">
-      <span class="discount">-28%</span>
-      <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=700">
-      <div class="card-body">
-        <h3>Kemeja Wanita Polos Elegan Mudah Dipadukan</h3>
-        <div class="price">Rp105.000 <span class="old">Rp145.000</span></div>
-        <div class="meta"><span class="rating">★ 4.8</span><span class="sold">Terjual 1,2rb</span></div>
-        <div class="location">Bandung</div>
-        <span class="free">Gratis Ongkir</span>
-        <select class="size"><option>S</option><option>M</option><option>L</option><option>XL</option></select>
-        <input type="number" class="qty" value="1" min="1">
-        <button class="add-btn" onclick="addToCart(this, 'Kemeja Wanita', 105000)">+ Keranjang</button>
-        <a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20LAVINASHOP,%20saya%20mau%20order%20Kemeja%20Wanita">Beli Sekarang</a>
-      </div>
-    </div>
-
-    <div class="card product">
-      <span class="discount">-27%</span>
-      <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=700">
-      <div class="card-body">
-        <h3>Kemeja Flanel Pria Motif Kotak Tebal Nyaman</h3>
-        <div class="price">Rp110.000 <span class="old">Rp150.000</span></div>
-        <div class="meta"><span class="rating">★ 4.9</span><span class="sold">Terjual 2,0rb</span></div>
-        <div class="location">Bandung</div>
-        <span class="free">Gratis Ongkir</span>
-        <select class="size"><option>M</option><option>L</option><option>XL</option></select>
-        <input type="number" class="qty" value="1" min="1">
-        <button class="add-btn" onclick="addToCart(this, 'Kemeja Flanel Pria', 110000)">+ Keranjang</button>
-        <a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20LAVINASHOP,%20saya%20mau%20order%20Kemeja%20Flanel%20Pria">Beli Sekarang</a>
-      </div>
-    </div>
-
-    <div class="card product">
-      <span class="discount">-26%</span>
-      <img src="https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=700">
-      <div class="card-body">
-        <h3>Sweater Wanita Rajut Lembut Hangat Kekinian</h3>
-        <div class="price">Rp115.000 <span class="old">Rp155.000</span></div>
-        <div class="meta"><span class="rating">★ 4.8</span><span class="sold">Terjual 743</span></div>
-        <div class="location">Bandung</div>
-        <span class="free">Gratis Ongkir</span>
-        <select class="size"><option>All Size</option></select>
-        <input type="number" class="qty" value="1" min="1">
-        <button class="add-btn" onclick="addToCart(this, 'Sweater Wanita', 115000)">+ Keranjang</button>
-        <a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20LAVINASHOP,%20saya%20mau%20order%20Sweater%20Wanita">Beli Sekarang</a>
-      </div>
-    </div>
-
-    <div class="card product">
-      <span class="discount">-25%</span>
-      <img src="https://images.unsplash.com/photo-1583496661160-fb5886a13d44?w=700">
-      <div class="card-body">
-        <h3>Tunik Hijab Friendly Panjang Bahan Adem</h3>
-        <div class="price">Rp120.000 <span class="old">Rp160.000</span></div>
-        <div class="meta"><span class="rating">★ 4.9</span><span class="sold">Terjual 1,5rb</span></div>
-        <div class="location">Bandung</div>
-        <span class="free">Gratis Ongkir</span>
-        <select class="size"><option>M</option><option>L</option><option>XL</option></select>
-        <input type="number" class="qty" value="1" min="1">
-        <button class="add-btn" onclick="addToCart(this, 'Tunik Hijab Friendly', 120000)">+ Keranjang</button>
-        <a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20LAVINASHOP,%20saya%20mau%20order%20Tunik%20Hijab%20Friendly">Beli Sekarang</a>
-      </div>
-    </div>
-
-    <div class="card product">
-      <span class="discount">-24%</span>
-      <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=700">
-      <div class="card-body">
-        <h3>Hoodie Wanita Oversize Fleece Tebal Premium</h3>
-        <div class="price">Rp125.000 <span class="old">Rp165.000</span></div>
-        <div class="meta"><span class="rating">★ 5.0</span><span class="sold">Terjual 2,7rb</span></div>
-        <div class="location">Bandung</div>
-        <span class="free">Gratis Ongkir</span>
-        <select class="size"><option>All Size</option></select>
-        <input type="number" class="qty" value="1" min="1">
-        <button class="add-btn" onclick="addToCart(this, 'Hoodie Wanita Oversize', 125000)">+ Keranjang</button>
-        <a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20LAVINASHOP,%20saya%20mau%20order%20Hoodie%20Wanita%20Oversize">Beli Sekarang</a>
-      </div>
-    </div>
-
-    <div class="card product">
-      <span class="discount">-23%</span>
-      <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=700">
-      <div class="card-body">
-        <h3>Jeans Wanita Slim Fit Stretch Nyaman Dipakai</h3>
-        <div class="price">Rp135.000 <span class="old">Rp175.000</span></div>
-        <div class="meta"><span class="rating">★ 4.8</span><span class="sold">Terjual 1,1rb</span></div>
-        <div class="location">Bandung</div>
-        <span class="free">Gratis Ongkir</span>
-        <select class="size"><option>27</option><option>28</option><option>29</option><option>30</option></select>
-        <input type="number" class="qty" value="1" min="1">
-        <button class="add-btn" onclick="addToCart(this, 'Jeans Wanita Slim Fit', 135000)">+ Keranjang</button>
-        <a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20LAVINASHOP,%20saya%20mau%20order%20Jeans%20Wanita%20Slim%20Fit">Beli Sekarang</a>
-      </div>
-    </div>
-
-    <div class="card product">
-      <span class="discount">-22%</span>
-      <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=700">
-      <div class="card-body">
-        <h3>Dress Korean Style Rayon Premium Jatuh Elegan</h3>
-        <div class="price">Rp145.000 <span class="old">Rp185.000</span></div>
-        <div class="meta"><span class="rating">★ 4.9</span><span class="sold">Terjual 1,9rb</span></div>
-        <div class="location">Bandung</div>
-        <span class="free">Gratis Ongkir</span>
-        <select class="size"><option>S</option><option>M</option><option>L</option></select>
-        <input type="number" class="qty" value="1" min="1">
-        <button class="add-btn" onclick="addToCart(this, 'Dress Korean Style', 145000)">+ Keranjang</button>
-        <a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20LAVINASHOP,%20saya%20mau%20order%20Dress%20Korean%20Style">Beli Sekarang</a>
-      </div>
-    </div>
-
-    <div class="card product">
-      <span class="discount">-21%</span>
-      <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=700">
-      <div class="card-body">
-        <h3>Setelan Wanita Korean Look One Set Praktis</h3>
-        <div class="price">Rp165.000 <span class="old">Rp210.000</span></div>
-        <div class="meta"><span class="rating">★ 4.9</span><span class="sold">Terjual 864</span></div>
-        <div class="location">Bandung</div>
-        <span class="free">Gratis Ongkir</span>
-        <select class="size"><option>M</option><option>L</option></select>
-        <input type="number" class="qty" value="1" min="1">
-        <button class="add-btn" onclick="addToCart(this, 'Setelan Wanita Korean Look', 165000)">+ Keranjang</button>
-        <a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20LAVINASHOP,%20saya%20mau%20order%20Setelan%20Wanita%20Korean%20Look">Beli Sekarang</a>
-      </div>
-    </div>
-
-    <div class="card product">
-      <span class="discount">-22%</span>
-      <img src="https://images.unsplash.com/photo-1610030469668-8e9f1d695485?w=700">
-      <div class="card-body">
-        <h3>Gamis Wanita Muslimah Adem Jatuh Premium</h3>
-        <div class="price">Rp175.000 <span class="old">Rp225.000</span></div>
-        <div class="meta"><span class="rating">★ 5.0</span><span class="sold">Terjual 1,3rb</span></div>
-        <div class="location">Bandung</div>
-        <span class="free">Gratis Ongkir</span>
-        <select class="size"><option>M</option><option>L</option><option>XL</option></select>
-        <input type="number" class="qty" value="1" min="1">
-        <button class="add-btn" onclick="addToCart(this, 'Gamis Wanita', 175000)">+ Keranjang</button>
-        <a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20LAVINASHOP,%20saya%20mau%20order%20Gamis%20Wanita">Beli Sekarang</a>
-      </div>
-    </div>
-
-    <div class="card product">
-      <span class="discount">-23%</span>
-      <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=700">
-      <div class="card-body">
-        <h3>Jaket Denim Pria Wanita Tebal Stylish Premium</h3>
-        <div class="price">Rp185.000 <span class="old">Rp240.000</span></div>
-        <div class="meta"><span class="rating">★ 4.8</span><span class="sold">Terjual 692</span></div>
-        <div class="location">Bandung</div>
-        <span class="free">Gratis Ongkir</span>
-        <select class="size"><option>M</option><option>L</option><option>XL</option></select>
-        <input type="number" class="qty" value="1" min="1">
-        <button class="add-btn" onclick="addToCart(this, 'Jaket Denim', 185000)">+ Keranjang</button>
-        <a class="wa-btn" href="https://wa.me/6287834403060?text=Halo%20LAVINASHOP,%20saya%20mau%20order%20Jaket%20Denim">Beli Sekarang</a>
-      </div>
-    </div>
-
+  <div class="tabs">
+    <button class="tab-btn active" onclick="showCategory('perempuan', this)">Baju Perempuan (100)</button>
+    <button class="tab-btn" onclick="showCategory('laki', this)">Baju Laki-Laki (100)</button>
   </div>
+
+  <div class="products" id="productList"></div>
 
   <div class="cart-box" id="keranjang">
     <h2>Keranjang Belanja</h2>
@@ -318,26 +97,33 @@ footer p {color:#ccc; font-size:14px; margin-top:7px;}
   </div>
 
   <div class="info">
-    <div class="box">
-      <h3>Alamat Toko</h3>
-      <p>Jl. Braga No. 88, Bandung, Jawa Barat</p>
-    </div>
-    <div class="box">
-      <h3>COD Bandung</h3>
-      <p>Bisa COD area Bandung tertentu. Konfirmasi lewat WhatsApp.</p>
-    </div>
-    <div class="box">
-      <h3>Kirim Seluruh Indonesia</h3>
-      <p>Melayani pengiriman ke Jawa Timur dan kota lain di Indonesia.</p>
-    </div>
+    <div class="box"><h3>Alamat Toko</h3><p>Jl. Braga No. 88, Bandung, Jawa Barat</p></div>
+    <div class="box"><h3>COD Bandung</h3><p>Bisa COD area Bandung tertentu. Konfirmasi lewat WhatsApp.</p></div>
+    <div class="box"><h3>Kirim Seluruh Indonesia</h3><p>Melayani pengiriman ke Jawa Timur dan kota lain di Indonesia.</p></div>
   </div>
 
   <h2 class="section-title">Penilaian Produk</h2>
   <p class="section-sub">Testimoni pelanggan Bandung dan Jawa Timur</p>
 
-  <div class="testi">
-    <p>"Dress Korean Style-nya bagus banget, bahannya jatuh dan tidak menerawang. Pengiriman ke Bandung cepat."</p>
-    <strong>★★★★★ - Nadia, Bandung</strong>
-  </div>
+  <div class="testi"><p>"Dress Korean Style-nya bagus banget, bahannya jatuh dan tidak menerawang. Pengiriman ke Bandung cepat."</p><strong>★★★★★ - Nadia, Bandung</strong></div>
+  <div class="testi"><p>"Kaos oversize premiumnya adem dan tebal. Cocok buat kuliah di Bandung."</p><strong>★★★★★ - Rizky, Cimahi</strong></div>
+  <div class="testi"><p>"Hoodie-nya hangat dan modelnya kekinian. Admin fast respon, barang sampai Surabaya dalam 3 hari."</p><strong>★★★★★ - Salsa, Surabaya</strong></div>
+  <div class="testi"><p>"Kemeja flanelnya rapi dan nyaman dipakai harian. Jahitannya bagus."</p><strong>★★★★☆ - Fajar, Malang</strong></div>
+  <div class="testi"><p>"One set wanita ini praktis banget, tinggal pakai langsung kelihatan rapi."</p><strong>★★★★★ - Putri, Sidoarjo</strong></div>
+  <div class="testi"><p>"Kaos polos premiumnya enak dipakai, tidak melar setelah dicuci."</p><strong>★★★★★ - Budi, Kediri</strong></div>
+</div>
 
- 
+<footer>
+  <h2>LAVINASHOP</h2>
+  <p>Toko Baju Kekinian Bandung</p>
+  <p>Alamat: Jl. Braga No. 88, Bandung, Jawa Barat</p>
+  <p>Melayani pengiriman ke Bandung, Jawa Timur, dan seluruh Indonesia</p>
+  <p>Instagram: @lavinashop | WhatsApp: 0878-3440-3060</p>
+  <p>© 2026 LAVINASHOP</p>
+</footer>
+
+<a class="wa-float" href="https://wa.me/6287834403060?text=Halo%20LAVINASHOP,%20saya%20mau%20tanya%20produk">Chat WhatsApp</a>
+
+<script>
+const femalePhotos = [
+"photo-1496747611176-843222e1e57c","photo-1515886657613-9f3515b0c78f","photo-1483985988355-763728e1935b","photo-1490481651871-ab68de25d43d","photo-1509631179647-0177331693ae","photo-1529139574466-a303027c1d8b","photo-1581044777550-4cfa60707c03","photo-1551163943-3f6a855d1153","photo-1594633312681-425c7b97ccd1","photo-1551163943-3f6a855d1153","photo-1572804013309-59a88b7e92f1","photo-1583496661160-fb5886a13d44","photo-1595777457583-95e059d581b8","photo-1610030469668-8e9f1d695485","photo-1585487000160-6ebcf
