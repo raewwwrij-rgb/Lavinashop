@@ -3,101 +3,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LAVINASHOP - Gamis & Mukena Perempuan</title>
+<title>Lavina Shop</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#fff7f8;color:#333}
-header{background:#c9184a;color:white;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
-header h1{font-size:22px}
-.cart-btn{background:white;color:#c9184a;border:none;padding:10px 16px;border-radius:20px;font-weight:bold;cursor:pointer}
-.hero{background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80') center/cover;color:white;text-align:center;padding:80px 20px}
-.hero h2{font-size:36px;margin-bottom:12px}
-.hero p{margin-bottom:20px}
-.hero a{background:#c9184a;color:white;text-decoration:none;padding:12px 24px;border-radius:25px;font-weight:bold}
-.search-filter{max-width:1100px;margin:24px auto;padding:0 16px;display:flex;gap:10px;flex-wrap:wrap}
-.search-filter input,.search-filter select{flex:1;min-width:180px;padding:12px;border:1px solid #ddd;border-radius:8px}
-.products{max-width:1100px;margin:auto;padding:10px 16px 40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px}
-.card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.08)}
-.card img{width:100%;height:280px;object-fit:cover;background:#eee}
-.card-body{padding:16px}
-.tag{display:inline-block;background:#ffe5ec;color:#c9184a;font-size:12px;padding:4px 8px;border-radius:12px;margin-bottom:8px}
-.card h3{font-size:17px;margin-bottom:6px}
-.price{color:#c9184a;font-weight:bold;font-size:18px;margin-bottom:10px}
-.card button{width:100%;background:#c9184a;color:white;border:none;padding:11px;border-radius:8px;cursor:pointer;font-weight:bold}
-footer{background:#222;color:white;text-align:center;padding:24px;margin-top:20px}
-footer a{color:#25d366;font-weight:bold;text-decoration:none}
-#cartBox{display:none;position:fixed;right:16px;top:70px;width:320px;max-width:calc(100vw - 32px);background:white;border-radius:12px;box-shadow:0 5px 25px rgba(0,0,0,.2);padding:16px;z-index:20}
-.cart-item{display:flex;justify-content:space-between;gap:10px;margin-bottom:8px;font-size:14px}
-.checkout{display:block;text-align:center;background:#25d366;color:white;text-decoration:none;padding:11px;border-radius:8px;margin-top:12px;font-weight:bold}
-.wa-float{position:fixed;right:16px;bottom:16px;background:#25d366;color:white;text-decoration:none;padding:13px 18px;border-radius:30px;font-weight:bold;z-index:30}
+body{margin:0;font-family:Arial,sans-serif;background:#faf7f1;color:#333}
+.header-toko{background:#f7f1e8;padding:28px 16px;text-align:center;border-bottom:1px solid #e5d8c3}
+.logo-toko{font-size:32px;font-weight:800;color:#5f6f52;font-family:Georgia,serif}
+.tagline-toko{margin:6px 0 14px;color:#8a7a63;font-size:14px}
+.menu-toko{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.menu-toko a{text-decoration:none;background:#5f6f52;color:white;padding:9px 16px;border-radius:999px;font-size:14px;font-weight:600}
+.judul-katalog{text-align:center;margin:28px 16px 10px;font-size:26px;color:#5f6f52}
+.katalog{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;padding:18px;max-width:1100px;margin:auto}
+.card{background:white;border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.card img{width:100%;height:320px;object-fit:cover;display:block}
+.card-body{padding:14px}
+.tag{display:inline-block;background:#eef0e6;color:#5f6f52;padding:5px 10px;border-radius:999px;font-size:12px;font-weight:700;margin-bottom:8px}
+.card h3{margin:6px 0;font-size:18px}
+.harga{color:#b7791f;font-weight:800;margin-bottom:8px}
+.card p{font-size:14px;line-height:1.5;color:#666}
+.btn{display:block;text-align:center;text-decoration:none;background:#25d366;color:white;padding:11px;border-radius:10px;font-weight:700;margin-top:10px}
+.footer{text-align:center;padding:24px 16px;color:#8a7a63;font-size:14px}
 </style>
 </head>
 <body>
 
-<header>
-<h1>LAVINASHOP</h1>
-<button class="cart-btn" onclick="toggleCart()">Keranjang (<span id="cartCount">0</span>)</button>
+<header class="header-toko">
+<div class="logo-toko">Lavina Shop</div>
+<p class="tagline-toko">Gamis Syari & Mukena Cantik</p>
+<nav class="menu-toko">
+<a href="#katalog">Katalog</a>
+<a href="https://wa.me/6287834403060?text=Halo%20Lavina%20Shop">WhatsApp</a>
+</nav>
 </header>
 
-<section class="hero">
-<h2>Gamis & Mukena Perempuan Cantik</h2>
-<p>Semua harga Rp 100.000</p>
-<a href="#produk">Belanja Sekarang</a>
-</section>
+<h2 class="judul-katalog" id="katalog">Katalog Produk</h2>
 
-<div class="search-filter">
-<input type="text" id="search" placeholder="Cari gamis atau mukena..." onkeyup="render()">
-<select id="category" onchange="render()">
-<option value="all">Semua Kategori</option>
-<option value="gamis">Gamis Syari</option>
-<option value="mukena">Mukena</option>
-</select>
-</div>
+<main class="katalog">
 
-<main class="products" id="produk"></main>
+<div class="card"><img src="gamis1.jpg" alt="Gamis Rolanda Hitam Abu"><div class="card-body"><span class="tag">Gamis Syari</span><h3>Gamis Syari Rolanda Hitam Abu</h3><div class="harga">Harga: Rp150.000</div><p>Gamis syari motif abstrak hitam abu, flowy dan elegan.</p><a class="btn" href="https://wa.me/6287834403060?text=Halo%20Lavina%20Shop,%20saya%20mau%20pesan%20Gamis%20Rolanda%20Hitam%20Abu">Order via WhatsApp</a></div></div>
 
-<div id="cartBox">
-<h3>Keranjang Belanja</h3>
-<div id="cartItems"></div>
-<p><strong>Total: <span id="total">Rp 0</span></strong></p>
-<a class="checkout" id="checkoutBtn" href="#" target="_blank">Pesan via WhatsApp</a>
-</div>
+<div class="card"><img src="gamis2.jpg" alt="Gamis Rolanda Ungu Mint"><div class="card-body"><span class="tag">Gamis Syari</span><h3>Gamis Syari Rolanda Ungu Mint</h3><div class="harga">Harga: Rp150.000</div><p>Gamis syari warna ungu mint dengan motif cantik dan nyaman.</p><a class="btn" href="https://wa.me/6287834403060?text=Halo%20Lavina%20Shop,%20saya%20mau%20pesan%20Gamis%20Rolanda%20Ungu%20Mint">Order via WhatsApp</a></div></div>
 
-<a class="wa-float" href="https://wa.me/6287834403060?text=Halo%20LAVINASHOP,%20saya%20mau%20tanya%20produk" target="_blank">WhatsApp 087834403060</a>
+<div class="card"><img src="gamis3.jpg" alt="Gamis Rolanda Pink Ungu"><div class="card-body"><span class="tag">Gamis Syari</span><h3>Gamis Syari Rolanda Pink Ungu</h3><div class="harga">Harga: Rp150.000</div><p>Gamis syari pink ungu, jatuh dan anggun dipakai.</p><a class="btn" href="https://wa.me/6287834403060?text=Halo%20Lavina%20Shop,%20saya%20mau%20pesan%20Gamis%20Rolanda%20Pink%20Ungu">Order via WhatsApp</a></div></div>
 
-<footer>
-<p>&copy; 2026 LAVINASHOP - Gamis & Mukena Perempuan</p>
-<p>WhatsApp: <a href="https://wa.me/6287834403060" target="_blank">087834403060</a></p>
-<p>Pengiriman ke seluruh Indonesia</p>
-</footer>
+<div class="card"><img src="gamis4.jpg" alt="Gamis Humaira Coklat"><div class="card-body"><span class="tag">Gamis Syari</span><h3>Gamis Syari Humaira Coklat</h3><div class="harga">Harga: Rp150.000</div><p>Gamis syari Humaira coklat dengan motif houndstooth.</p><a class="btn" href="https://wa.me/6287834403060?text=Halo%20Lavina%20Shop,%20saya%20mau%20pesan%20Gamis%20Humaira%20Coklat">Order via WhatsApp</a></div></div>
 
-<script>
-const WA_NUMBER = "6287834403060";
-const products = [
-{name:"Gamis Syari Motif Hitam Abu",cat:"gamis",price:100000,img:FB_IMG_1794472369934.jpg"},
-{name:"Gamis Syari Motif Ungu Pink",cat:"gamis",price:100000,img:"images/produk2.jpg"},
-{name:"Gamis Syari Motif Pink Magenta",cat:"gamis",price:100000,img:"images/produk3.jpg"},
-{name:"Gamis Humaira Coklat",cat:"gamis",price:100000,img:"images/produk4.jpg"},
-{name:"Gamis Humaira Pink",cat:"gamis",price:100000,img:"images/produk5.jpg"},
-{name:"Gamis Humaira Ungu",cat:"gamis",price:100000,img:"images/produk6.jpg"},
-{name:"Gamis Humaira Olive",cat:"gamis",price:100000,img:"images/produk7.jpg"},
-{name:"Mukena Syafiq Cream Polkadot",cat:"mukena",price:100000,img:"images/produk8.jpg"},
-{name:"Mukena Syafiq Biru Polkadot",cat:"mukena",price:100000,img:"images/produk9.jpg"}
-];
-let cart=[];
-function rupiah(n){return "Rp "+n.toLocaleString("id-ID")}
-function render(){
- const q=document.getElementById("search").value.toLowerCase();
- const cat=document.getElementById("category").value;
- document.getElementById("produk").innerHTML=products.filter(p=>(cat==="all"||p.cat===cat)&&p.name.toLowerCase().includes(q)).map(p=>`
- <div class="card"><img src="${p.img}" alt="${p.name}">
- <div class="card-body"><span class="tag">${p.cat.toUpperCase()}</span><h3>${p.name}</h3><div class="price">${rupiah(p.price)}</div>
- <button onclick="addCart('${p.name}')">Tambah ke Keranjang</button></div></div>`).join("")||"<p>Produk tidak ditemukan.</p>";
-}
-function addCart(name){cart.push(products.find(p=>p.name===name));document.getElementById("cartCount").textContent=cart.length;renderCart();alert(name+" ditambahkan ke keranjang")}
-function renderCart(){let total=0;document.getElementById("cartItems").innerHTML=cart.map(p=>{total+=p.price;return `<div class="cart-item"><span>${p.name}</span><b>${rupiah(p.price)}</b></div>`}).join("")||"Keranjang masih kosong";document.getElementById("total").textContent=rupiah(total);document.getElementById("checkoutBtn").href="https://wa.me/"+WA_NUMBER+"?text="+encodeURIComponent("Halo LAVINASHOP, saya mau pesan:\n"+cart.map(p=>"- "+p.name+" ("+rupiah(p.price)+")").join("\n")+"\nTotal: "+rupiah(total))}
-function toggleCart(){const b=document.getElementById("cartBox");b.style.display=b.style.display==="block"?"none":"block"}
-render();
-</script>
+<div class="card"><img src="gamis5.jpg" alt="Gamis Humaira Pink"><div class="card-body"><span class="tag">Gamis Syari</span><h3>Gamis Syari Humaira Pink</h3><div class="harga">Harga: Rp150.000</div><p>Gamis syari Humaira pink lembut, cocok untuk harian dan acara.</p><a class="btn" href="https://wa.me/6287834403060?text=Halo%20Lavina%20Shop,%20saya%20mau%20pesan%20Gamis%20Humaira%20Pink">Order via WhatsApp</a></div></div>
+
+<div class="card"><img src="gamis6.jpg" alt="Gamis Humaira Ungu"><div class="card-body"><span class="tag">Gamis Syari</span><h3>Gamis Syari Humaira Ungu</h3><div class="harga">Harga: Rp150.000</div><p>Gamis syari Humaira ungu dengan motif elegan dan rok lebar.</p><a class="btn" href="https://wa.me/6287834403060?text=Halo%20Lavina%20Shop,%20saya%20mau%20pesan%20Gamis%20Humaira%20Ungu">Order via WhatsApp</a></div></div>
+
+<div class="card">FB_IMG_1794472369934.jpg<img src="gamis7.jpg" alt="Gamis Humaira Army"><div class="card-body"><span class="tag">Gamis Syari</span><h3>Gamis Syari Humaira Army</h3><div class="harga">Harga: Rp150.000</div><p>Gamis syari Humaira army, simple dan tetap terlihat mewah.</p><a class="btn" href="https://wa.me/6287834403060?text=Halo%20Lavina%20Shop,%20saya%20mau%20pesan%20Gamis%20Humaira%20Army">Order via WhatsApp</a></div></div>
+
+<div class="card"><img src="mukena1.jpg" alt="Mukena Syafiq Cream"><div class="card-body"><span class="tag">Mukena</span><h3>Mukena Syafiq Polkadot Cream Renda</h3><div class="harga">Harga: Rp150.000</div><p>Mukena Syafiq polkadot cream dengan renda, adem dan nyaman.</p><a class="btn" href="https://wa.me/6287834403060?text=Halo%20Lavina%20Shop,%20saya%20mau%20pesan%20Mukena%20Syafiq%20Cream">Order via WhatsApp</a></div></div>
+
+<div class="card"><img src="mukena2.jpg" alt="Mukena Syafiq Biru"><div class="card-body"><span class="tag">Mukena</span><h3>Mukena Syafiq Polkadot Biru Renda</h3><div class="harga">Harga: Rp150.000</div><p>Mukena Syafiq polkadot biru dengan renda cantik, lengkap pouch.</p><a class="btn" href="https://wa.me/6287834403060?text=Halo%20Lavina%20Shop,%20saya%20mau%20pesan%20Mukena%20Syafiq%20Biru">Order via WhatsApp</a></div></div>
+
+</main>
+
+<footer class="footer">Lavina Shop - WhatsApp +62 878-3440-3060</footer>
+
 </body>
 </html>
