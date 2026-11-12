@@ -8,7 +8,7 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 body{background:#fff7f8;color:#333}
 header{background:#c9184a;color:white;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
-header h1{font-size:22px;letter-spacing:1px}
+header h1{font-size:22px}
 .cart-btn{background:white;color:#c9184a;border:none;padding:10px 16px;border-radius:20px;font-weight:bold;cursor:pointer}
 .hero{background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80') center/cover;color:white;text-align:center;padding:80px 20px}
 .hero h2{font-size:36px;margin-bottom:12px}
@@ -18,18 +18,18 @@ header h1{font-size:22px;letter-spacing:1px}
 .search-filter input,.search-filter select{flex:1;min-width:180px;padding:12px;border:1px solid #ddd;border-radius:8px}
 .products{max-width:1100px;margin:auto;padding:10px 16px 40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px}
 .card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.08)}
-.card img{width:100%;height:280px;object-fit:cover}
+.card img{width:100%;height:280px;object-fit:cover;background:#eee}
 .card-body{padding:16px}
 .tag{display:inline-block;background:#ffe5ec;color:#c9184a;font-size:12px;padding:4px 8px;border-radius:12px;margin-bottom:8px}
 .card h3{font-size:17px;margin-bottom:6px}
 .price{color:#c9184a;font-weight:bold;font-size:18px;margin-bottom:10px}
 .card button{width:100%;background:#c9184a;color:white;border:none;padding:11px;border-radius:8px;cursor:pointer;font-weight:bold}
 footer{background:#222;color:white;text-align:center;padding:24px;margin-top:20px}
+footer a{color:#25d366;font-weight:bold;text-decoration:none}
 #cartBox{display:none;position:fixed;right:16px;top:70px;width:320px;max-width:calc(100vw - 32px);background:white;border-radius:12px;box-shadow:0 5px 25px rgba(0,0,0,.2);padding:16px;z-index:20}
-#cartBox h3{margin-bottom:10px}
 .cart-item{display:flex;justify-content:space-between;gap:10px;margin-bottom:8px;font-size:14px}
 .checkout{display:block;text-align:center;background:#25d366;color:white;text-decoration:none;padding:11px;border-radius:8px;margin-top:12px;font-weight:bold}
-@media(max-width:600px){.hero h2{font-size:28px}}
+.wa-float{position:fixed;right:16px;bottom:16px;background:#25d366;color:white;text-decoration:none;padding:13px 18px;border-radius:30px;font-weight:bold;z-index:30}
 </style>
 </head>
 <body>
@@ -41,7 +41,7 @@ footer{background:#222;color:white;text-align:center;padding:24px;margin-top:20p
 
 <section class="hero">
 <h2>Gamis & Mukena Perempuan Cantik</h2>
-<p>Koleksi gamis syari dan mukena premium, semua harga Rp 100.000.</p>
+<p>Semua harga Rp 100.000</p>
 <a href="#produk">Belanja Sekarang</a>
 </section>
 
@@ -63,14 +63,15 @@ footer{background:#222;color:white;text-align:center;padding:24px;margin-top:20p
 <a class="checkout" id="checkoutBtn" href="#" target="_blank">Pesan via WhatsApp</a>
 </div>
 
+<a class="wa-float" href="https://wa.me/6287834403060?text=Halo%20LAVINASHOP" target="_blank">WhatsApp 087834403060</a>
+
 <footer>
-<p>&copy; 2026 LAVINASHOP - Gamis & Mukena Perempuan</p>
-<p>Pengiriman ke seluruh Indonesia</p>
+<p>&copy; 2026 LAVINASHOP</p>
+<p>WhatsApp: <a href="https://wa.me/6287834403060" target="_blank">087834403060</a></p>
 </footer>
 
 <script>
 const WA_NUMBER = "6287834403060";
-
 const products = [
 {name:"Gamis Syari Motif Hitam Abu",cat:"gamis",price:100000,img:"images/produk1.jpg"},
 {name:"Gamis Syari Motif Ungu Pink",cat:"gamis",price:100000,img:"images/produk2.jpg"},
@@ -82,50 +83,19 @@ const products = [
 {name:"Mukena Syafiq Cream Polkadot",cat:"mukena",price:100000,img:"images/produk8.jpg"},
 {name:"Mukena Syafiq Biru Polkadot",cat:"mukena",price:100000,img:"images/produk9.jpg"}
 ];
-
-let cart = [];
-
-function rupiah(n){return "Rp " + n.toLocaleString("id-ID")}
-
+let cart=[];
+function rupiah(n){return "Rp "+n.toLocaleString("id-ID")}
 function render(){
- const q = document.getElementById("search").value.toLowerCase();
- const cat = document.getElementById("category").value;
- const box = document.getElementById("produk");
- box.innerHTML = products.filter(p => (cat==="all"||p.cat===cat) && p.name.toLowerCase().includes(q))
- .map(p=>`
-  <div class="card">
-   <img src="${p.img}" alt="${p.name}">
-   <div class="card-body">
-    <span class="tag">${p.cat.toUpperCase()}</span>
-    <h3>${p.name}</h3>
-    <div class="price">${rupiah(p.price)}</div>
-    <button onclick="addCart('${p.name}')">Tambah ke Keranjang</button>
-   </div>
-  </div>`).join("") || "<p>Produk tidak ditemukan.</p>";
+ const q=document.getElementById("search").value.toLowerCase();
+ const cat=document.getElementById("category").value;
+ document.getElementById("produk").innerHTML=products.filter(p=>(cat==="all"||p.cat===cat)&&p.name.toLowerCase().includes(q)).map(p=>`
+ <div class="card"><img src="${p.img}" alt="${p.name}" onerror="this.src='https://via.placeholder.com/600x800?text=Foto+Belum+Ada'">
+ <div class="card-body"><span class="tag">${p.cat.toUpperCase()}</span><h3>${p.name}</h3><div class="price">${rupiah(p.price)}</div>
+ <button onclick="addCart('${p.name}')">Tambah ke Keranjang</button></div></div>`).join("");
 }
-
-function addCart(name){
- const product = products.find(p => p.name === name);
- cart.push(product);
- document.getElementById("cartCount").textContent = cart.length;
- alert(product.name + " ditambahkan ke keranjang");
- renderCart();
-}
-
-function renderCart(){
- const box = document.getElementById("cartItems");
- let total = 0;
- box.innerHTML = cart.map(p=>{ total+=p.price; return `<div class="cart-item"><span>${p.name}</span><b>${rupiah(p.price)}</b></div>`}).join("") || "Keranjang masih kosong";
- document.getElementById("total").textContent = rupiah(total);
- const pesan = encodeURIComponent("Halo LAVINASHOP, saya mau pesan:\n" + cart.map(p=>"- " + p.name + " ("+rupiah(p.price)+")").join("\n") + "\nTotal: " + rupiah(total));
- document.getElementById("checkoutBtn").href = "https://wa.me/" + WA_NUMBER + "?text=" + pesan;
-}
-
-function toggleCart(){
- const b = document.getElementById("cartBox");
- b.style.display = b.style.display==="block" ? "none" : "block";
-}
-
+function addCart(name){cart.push(products.find(p=>p.name===name));document.getElementById("cartCount").textContent=cart.length;renderCart();alert(name+" ditambahkan")}
+function renderCart(){let total=0;document.getElementById("cartItems").innerHTML=cart.map(p=>{total+=p.price;return `<div class="cart-item"><span>${p.name}</span><b>${rupiah(p.price)}</b></div>`}).join("")||"Keranjang kosong";document.getElementById("total").textContent=rupiah(total);document.getElementById("checkoutBtn").href="https://wa.me/"+WA_NUMBER+"?text="+encodeURIComponent("Halo LAVINASHOP, saya mau pesan:\n"+cart.map(p=>"- "+p.name).join("\n")+"\nTotal: "+rupiah(total))}
+function toggleCart(){let b=document.getElementById("cartBox");b.style.display=b.style.display==="block"?"none":"block"}
 render();
 </script>
 </body>
