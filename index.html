@@ -63,40 +63,36 @@ footer a{color:#25d366;font-weight:bold;text-decoration:none}
 <a class="checkout" id="checkoutBtn" href="#" target="_blank">Pesan via WhatsApp</a>
 </div>
 
-<a class="wa-float" href="https://wa.me/6287834403060?text=Halo%20LAVINASHOP" target="_blank">WhatsApp 087834403060</a>
+<a class="wa-float" href="https://wa.me/6287834403060?text=Halo%20LAVINASHOP,%20saya%20mau%20tanya%20produk" target="_blank">WhatsApp 087834403060</a>
 
 <footer>
-<p>&copy; 2026 LAVINASHOP</p>
+<p>&copy; 2026 LAVINASHOP - Gamis & Mukena Perempuan</p>
 <p>WhatsApp: <a href="https://wa.me/6287834403060" target="_blank">087834403060</a></p>
+<p>Pengiriman ke seluruh Indonesia</p>
 </footer>
 
 <script>
 const WA_NUMBER = "6287834403060";
+
 const products = [
 {name:"Gamis Syari Motif Hitam Abu",cat:"gamis",price:100000,img:"images/produk1.jpg"},
 {name:"Gamis Syari Motif Ungu Pink",cat:"gamis",price:100000,img:"images/produk2.jpg"},
 {name:"Gamis Syari Motif Pink Magenta",cat:"gamis",price:100000,img:"images/produk3.jpg"},
 {name:"Gamis Humaira Coklat",cat:"gamis",price:100000,img:"images/produk4.jpg"},
 {name:"Gamis Humaira Pink",cat:"gamis",price:100000,img:"images/produk5.jpg"},
-{name:"Gamis Humaira Ungu",cat:"gamis",price:100000,img:"images/produk6.jpg"},
 {name:"Gamis Humaira Olive",cat:"gamis",price:100000,img:"images/produk7.jpg"},
 {name:"Mukena Syafiq Cream Polkadot",cat:"mukena",price:100000,img:"images/produk8.jpg"},
 {name:"Mukena Syafiq Biru Polkadot",cat:"mukena",price:100000,img:"images/produk9.jpg"}
 ];
+
 let cart=[];
+
 function rupiah(n){return "Rp "+n.toLocaleString("id-ID")}
+
 function render(){
  const q=document.getElementById("search").value.toLowerCase();
  const cat=document.getElementById("category").value;
- document.getElementById("produk").innerHTML=products.filter(p=>(cat==="all"||p.cat===cat)&&p.name.toLowerCase().includes(q)).map(p=>`
- <div class="card"><img src="${p.img}" alt="${p.name}" onerror="this.src='https://via.placeholder.com/600x800?text=Foto+Belum+Ada'">
- <div class="card-body"><span class="tag">${p.cat.toUpperCase()}</span><h3>${p.name}</h3><div class="price">${rupiah(p.price)}</div>
- <button onclick="addCart('${p.name}')">Tambah ke Keranjang</button></div></div>`).join("");
-}
-function addCart(name){cart.push(products.find(p=>p.name===name));document.getElementById("cartCount").textContent=cart.length;renderCart();alert(name+" ditambahkan")}
-function renderCart(){let total=0;document.getElementById("cartItems").innerHTML=cart.map(p=>{total+=p.price;return `<div class="cart-item"><span>${p.name}</span><b>${rupiah(p.price)}</b></div>`}).join("")||"Keranjang kosong";document.getElementById("total").textContent=rupiah(total);document.getElementById("checkoutBtn").href="https://wa.me/"+WA_NUMBER+"?text="+encodeURIComponent("Halo LAVINASHOP, saya mau pesan:\n"+cart.map(p=>"- "+p.name).join("\n")+"\nTotal: "+rupiah(total))}
-function toggleCart(){let b=document.getElementById("cartBox");b.style.display=b.style.display==="block"?"none":"block"}
-render();
-</script>
-</body>
-</html>
+ document.getElementById("produk").innerHTML=products
+ .filter(p=>(cat==="all"||p.cat===cat)&&p.name.toLowerCase().includes(q))
+ .map(p=>`
+ <div class="card">
