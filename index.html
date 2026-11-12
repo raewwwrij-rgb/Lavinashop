@@ -3,187 +3,130 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LAVINASHOP Bandung - Katalog Baju</title>
+<title>LAVINASHOP - Gamis & Mukena Perempuan</title>
 <style>
-* {margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif;}
-body {background:#f5f5f5; color:#222;}
-header {background:#ee4d2d; color:white; padding:16px; text-align:center;}
-.container {max-width:1200px; margin:auto; padding:16px;}
-.judul {text-align:center; color:#ee4d2d; margin:18px 0 10px; text-transform:uppercase;}
-.note {text-align:center; color:#666; margin-bottom:16px;}
-.search {width:100%; max-width:620px; display:block; margin:0 auto 18px; padding:13px; border:1px solid #ddd; border-radius:5px;}
-.tabs {display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-bottom:20px;}
-.tab {background:white; border:1px solid #ffd9cf; color:#ee4d2d; padding:11px 20px; border-radius:30px; font-weight:bold; cursor:pointer;}
-.tab.active {background:#ee4d2d; color:white;}
-.products {display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:12px;}
-.card {background:white; border-radius:6px; overflow:hidden; box-shadow:0 1px 6px rgba(0,0,0,.12); position:relative; display:flex; flex-direction:column;}
-.card img {width:100%; height:240px; object-fit:cover; display:block; background:#ddd;}
-.diskon {position:absolute; top:8px; right:8px; background:#ffe97a; color:#ee4d2d; font-size:12px; font-weight:bold; padding:5px 7px; border-radius:3px; z-index:2;}
-.card-body {padding:10px; display:flex; flex-direction:column; flex:1;}
-.card h3 {font-size:14px; line-height:1.4; min-height:40px; font-weight:normal;}
-.harga {color:#ee4d2d; font-weight:bold; font-size:18px; margin:8px 0;}
-.lama {text-decoration:line-through; color:#999; font-size:12px;}
-.meta {display:flex; justify-content:space-between; font-size:12px; color:#777;}
-.lokasi {font-size:12px; color:#888; margin-top:5px;}
-select, input[type=number] {width:100%; padding:8px; margin-top:8px; border:1px solid #ddd; border-radius:4px;}
-.tambah {width:100%; background:#ee4d2d; color:white; border:none; padding:10px; border-radius:4px; font-weight:bold; cursor:pointer; margin-top:9px;}
-.wa {display:block; text-align:center; background:#25D366; color:white; padding:10px; border-radius:4px; font-weight:bold; margin-top:7px; text-decoration:none;}
-.cart-box {background:white; padding:20px; border-radius:6px; margin-top:38px; box-shadow:0 1px 6px rgba(0,0,0,.08);}
-.cart-item {display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding:12px 0; font-size:14px;}
-.hapus {background:#ff4d4d; color:white; border:none; padding:6px 10px; border-radius:4px; cursor:pointer;}
-.checkout {width:100%; background:#ee4d2d; color:white; border:none; padding:14px; border-radius:4px; font-size:16px; font-weight:bold; cursor:pointer; margin-top:15px;}
-footer {background:#222; color:white; text-align:center; padding:24px; margin-top:35px;}
-footer p {color:#ccc; font-size:14px; margin-top:6px;}
-.wa-float {position:fixed; right:16px; bottom:16px; background:#25D366; color:white; padding:13px 18px; border-radius:30px; font-weight:bold; text-decoration:none; z-index:20;}
-@media(max-width:600px){
-  .products {grid-template-columns:repeat(2,1fr); gap:9px;}
-  .card img {height:205px;}
-  .card h3 {font-size:13px;}
-  .harga {font-size:16px;}
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#fff7f8;color:#333}
+header{background:#c9184a;color:white;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
+header h1{font-size:22px;letter-spacing:1px}
+.cart-btn{background:white;color:#c9184a;border:none;padding:10px 16px;border-radius:20px;font-weight:bold;cursor:pointer}
+.hero{background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80') center/cover;color:white;text-align:center;padding:80px 20px}
+.hero h2{font-size:36px;margin-bottom:12px}
+.hero p{margin-bottom:20px}
+.hero a{background:#c9184a;color:white;text-decoration:none;padding:12px 24px;border-radius:25px;font-weight:bold}
+.search-filter{max-width:1100px;margin:24px auto;padding:0 16px;display:flex;gap:10px;flex-wrap:wrap}
+.search-filter input,.search-filter select{flex:1;min-width:180px;padding:12px;border:1px solid #ddd;border-radius:8px}
+.products{max-width:1100px;margin:auto;padding:10px 16px 40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px}
+.card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.card img{width:100%;height:280px;object-fit:cover}
+.card-body{padding:16px}
+.tag{display:inline-block;background:#ffe5ec;color:#c9184a;font-size:12px;padding:4px 8px;border-radius:12px;margin-bottom:8px}
+.card h3{font-size:17px;margin-bottom:6px}
+.price{color:#c9184a;font-weight:bold;font-size:18px;margin-bottom:10px}
+.card button{width:100%;background:#c9184a;color:white;border:none;padding:11px;border-radius:8px;cursor:pointer;font-weight:bold}
+footer{background:#222;color:white;text-align:center;padding:24px;margin-top:20px}
+#cartBox{display:none;position:fixed;right:16px;top:70px;width:320px;max-width:calc(100vw - 32px);background:white;border-radius:12px;box-shadow:0 5px 25px rgba(0,0,0,.2);padding:16px;z-index:20}
+#cartBox h3{margin-bottom:10px}
+.cart-item{display:flex;justify-content:space-between;gap:10px;margin-bottom:8px;font-size:14px}
+.checkout{display:block;text-align:center;background:#25d366;color:white;text-decoration:none;padding:11px;border-radius:8px;margin-top:12px;font-weight:bold}
+@media(max-width:600px){.hero h2{font-size:28px}}
 </style>
 </head>
 <body>
 
 <header>
 <h1>LAVINASHOP</h1>
-<p>200 Koleksi Baju Kekinian Bandung, Foto Produk Berbeda-Beda</p>
+<button class="cart-btn" onclick="toggleCart()">Keranjang (<span id="cartCount">0</span>)</button>
 </header>
 
-<div class="container">
-<h2 class="judul">Katalog ala Shopee</h2>
-<p class="note">100 baju perempuan dan 100 baju laki-laki. Setiap produk punya foto berbeda.</p>
+<section class="hero">
+<h2>Gamis & Mukena Perempuan Cantik</h2>
+<p>Koleksi gamis syari dan mukena premium, semua harga Rp 100.000.</p>
+<a href="#produk">Belanja Sekarang</a>
+</section>
 
-<input class="search" id="cari" placeholder="Cari dress, kaos, hoodie, kemeja..." onkeyup="cariProduk()">
-
-<div class="tabs">
-<button class="tab active" onclick="tampil('perempuan',this)">Perempuan (100)</button>
-<button class="tab" onclick="tampil('laki',this)">Laki-Laki (100)</button>
+<div class="search-filter">
+<input type="text" id="search" placeholder="Cari gamis atau mukena..." onkeyup="render()">
+<select id="category" onchange="render()">
+<option value="all">Semua Kategori</option>
+<option value="gamis">Gamis Syari</option>
+<option value="mukena">Mukena</option>
+</select>
 </div>
 
-<div class="products" id="produk"></div>
+<main class="products" id="produk"></main>
 
-<div class="cart-box">
-<h2>Keranjang Belanja</h2>
-<div id="isiKeranjang"><p style="color:#777;margin-top:10px;">Keranjang masih kosong.</p></div>
-<h3 style="margin-top:14px;">Total: <span id="total">Rp0</span></h3>
-<button class="checkout" onclick="checkoutWA()">Checkout via WhatsApp</button>
-</div>
+<div id="cartBox">
+<h3>Keranjang Belanja</h3>
+<div id="cartItems"></div>
+<p><strong>Total: <span id="total">Rp 0</span></strong></p>
+<a class="checkout" id="checkoutBtn" href="#" target="_blank">Pesan via WhatsApp</a>
 </div>
 
 <footer>
-<h2>LAVINASHOP</h2>
-<p>Toko Baju Kekinian Bandung</p>
-<p>Jl. Braga No. 88, Bandung, Jawa Barat</p>
-<p>Melayani pengiriman ke Bandung, Jawa Timur, dan seluruh Indonesia</p>
-<p>WhatsApp: 0878-3440-3060 | Instagram: @lavinashop</p>
+<p>&copy; 2026 LAVINASHOP - Gamis & Mukena Perempuan</p>
+<p>Pengiriman ke seluruh Indonesia</p>
 </footer>
 
-<a class="wa-float" href="https://wa.me/6287834403060?text=Halo%20LAVINASHOP,%20saya%20mau%20tanya%20produk">Chat WhatsApp</a>
-
 <script>
-const namaPerempuan = ["Dress Korean Style","Blouse Wanita","Tunik Hijab Friendly","Gamis Wanita","Setelan Wanita","Outer Cardigan","Blazer Wanita","Kaos Wanita Crop Top","Kemeja Wanita","Sweater Wanita","Hoodie Wanita Oversize","Rok Plisket Wanita","Celana Kulot Wanita","Dress Pesta Wanita","Piyama Set Wanita","Atasan Wanita Kekinian","Cardigan Rajut Wanita","Dress Floral Wanita","Blouse Lengan Balon","Kaos Oversize Wanita"];
-const namaLaki = ["Kaos Polos Pria","Kaos Oversize Pria","Kaos Distro Pria","Kemeja Flanel Pria","Kemeja Linen Pria","Sweater Pria","Hoodie Pria Oversize","Jaket Denim Pria","Jaket Parasut Pria","Celana Cargo Pria","Jeans Pria Slim Fit","Kaos Couple Pria","Kemeja Batik Pria","Polo Shirt Pria","Celana Chino Pria","Kaos Street Style Pria","Flanel Oversize Pria","Hoodie Zipper Pria","Kaos Vintage Pria","Kemeja Formal Pria"];
+const WA_NUMBER = "6287834403060";
 
-const kataPerempuan = ["woman,fashion","dress","blouse","hijab","skirt","cardigan","woman,clothes","fashion,girl","dress,fashion","blouse,fashion"];
-const kataLaki = ["man,fashion","tshirt","shirt","hoodie","jacket","jeans","man,clothes","fashion,boy","shirt,fashion","tshirt,fashion"];
+const products = [
+{name:"Gamis Syari Motif Hitam Abu",cat:"gamis",price:100000,img:"images/produk1.jpg"},
+{name:"Gamis Syari Motif Ungu Pink",cat:"gamis",price:100000,img:"images/produk2.jpg"},
+{name:"Gamis Syari Motif Pink Magenta",cat:"gamis",price:100000,img:"images/produk3.jpg"},
+{name:"Gamis Humaira Coklat",cat:"gamis",price:100000,img:"images/produk4.jpg"},
+{name:"Gamis Humaira Pink",cat:"gamis",price:100000,img:"images/produk5.jpg"},
+{name:"Gamis Humaira Ungu",cat:"gamis",price:100000,img:"images/produk6.jpg"},
+{name:"Gamis Humaira Olive",cat:"gamis",price:100000,img:"images/produk7.jpg"},
+{name:"Mukena Syafiq Cream Polkadot",cat:"mukena",price:100000,img:"images/produk8.jpg"},
+{name:"Mukena Syafiq Biru Polkadot",cat:"mukena",price:100000,img:"images/produk9.jpg"}
+];
 
-let keranjang = [];
+let cart = [];
 
-function rupiah(n){ return "Rp" + n.toLocaleString("id-ID"); }
+function rupiah(n){return "Rp " + n.toLocaleString("id-ID")}
 
-function fotoUnik(kategori, i){
-  const kata = kategori === "perempuan" ? kataPerempuan[i % kataPerempuan.length] : kataLaki[i % kataLaki.length];
-  const lock = kategori === "perempuan" ? (i + 1) : (i + 101);
-  return "https://loremflickr.com/600/750/" + kata + "?lock=" + lock;
+function render(){
+ const q = document.getElementById("search").value.toLowerCase();
+ const cat = document.getElementById("category").value;
+ const box = document.getElementById("produk");
+ box.innerHTML = products.filter(p => (cat==="all"||p.cat===cat) && p.name.toLowerCase().includes(q))
+ .map(p=>`
+  <div class="card">
+   <img src="${p.img}" alt="${p.name}">
+   <div class="card-body">
+    <span class="tag">${p.cat.toUpperCase()}</span>
+    <h3>${p.name}</h3>
+    <div class="price">${rupiah(p.price)}</div>
+    <button onclick="addCart('${p.name}')">Tambah ke Keranjang</button>
+   </div>
+  </div>`).join("") || "<p>Produk tidak ditemukan.</p>";
 }
 
-function tampil(kategori, tombol){
-  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
-  tombol.classList.add("active");
-
-  const daftarNama = kategori === "perempuan" ? namaPerempuan : namaLaki;
-  let html = "";
-
-  for(let i=0; i<100; i++){
-    const foto = fotoUnik(kategori, i);
-    const nama = daftarNama[i % daftarNama.length] + " Model " + (i+1);
-    const harga = 69000 + ((i * 7300) % 145000);
-    const hargaLama = Math.round(harga * 1.35 / 1000) * 1000;
-    const diskon = Math.round((1 - harga / hargaLama) * 100);
-    const rating = (4.7 + ((i % 4) * 0.1)).toFixed(1);
-    const terjual = 100 + ((i * 47) % 4800);
-
-    html += `
-    <div class="card product">
-      <span class="diskon">-${diskon}%</span>
-      <img src="${foto}" alt="${nama}" onerror="this.onerror=null;this.src='https://picsum.photos/seed/lavina${kategori}${i}/600/750'">
-      <div class="card-body">
-        <h3>${nama} Premium Bandung</h3>
-        <div class="harga">${rupiah(harga)} <span class="lama">${rupiah(hargaLama)}</span></div>
-        <div class="meta"><span>★ ${rating}</span><span>Terjual ${terjual}</span></div>
-        <div class="lokasi">Bandung</div>
-        <select class="size"><option>S</option><option>M</option><option>L</option><option>XL</option></select>
-        <input type="number" class="qty" value="1" min="1">
-        <button class="tambah" onclick="tambahKeranjang(this,'${nama}',${harga})">+ Keranjang</button>
-        <a class="wa" href="https://wa.me/6287834403060?text=Halo%20saya%20mau%20order%20${encodeURIComponent(nama)}">Beli Sekarang</a>
-      </div>
-    </div>`;
-  }
-  document.getElementById("produk").innerHTML = html;
+function addCart(name){
+ const product = products.find(p => p.name === name);
+ cart.push(product);
+ document.getElementById("cartCount").textContent = cart.length;
+ alert(product.name + " ditambahkan ke keranjang");
+ renderCart();
 }
 
-function tambahKeranjang(tombol, nama, harga){
-  const card = tombol.closest(".card");
-  const size = card.querySelector(".size").value;
-  const qty = parseInt(card.querySelector(".qty").value) || 1;
-  keranjang.push({nama, harga, size, qty});
-  tampilKeranjang();
-  alert(nama + " ditambahkan ke keranjang");
+function renderCart(){
+ const box = document.getElementById("cartItems");
+ let total = 0;
+ box.innerHTML = cart.map(p=>{ total+=p.price; return `<div class="cart-item"><span>${p.name}</span><b>${rupiah(p.price)}</b></div>`}).join("") || "Keranjang masih kosong";
+ document.getElementById("total").textContent = rupiah(total);
+ const pesan = encodeURIComponent("Halo LAVINASHOP, saya mau pesan:\n" + cart.map(p=>"- " + p.name + " ("+rupiah(p.price)+")").join("\n") + "\nTotal: " + rupiah(total));
+ document.getElementById("checkoutBtn").href = "https://wa.me/" + WA_NUMBER + "?text=" + pesan;
 }
 
-function tampilKeranjang(){
-  const box = document.getElementById("isiKeranjang");
-  const totalEl = document.getElementById("total");
-  if(keranjang.length === 0){
-    box.innerHTML = '<p style="color:#777;margin-top:10px;">Keranjang masih kosong.</p>';
-    totalEl.innerText = "Rp0";
-    return;
-  }
-  let total = 0, html = "";
-  keranjang.forEach((item, i) => {
-    const sub = item.harga * item.qty;
-    total += sub;
-    html += `<div class="cart-item"><div><b>${item.nama}</b><br>Size ${item.size} | Qty ${item.qty}<br>${rupiah(sub)}</div><button class="hapus" onclick="hapus(${i})">Hapus</button></div>`;
-  });
-  box.innerHTML = html;
-  totalEl.innerText = rupiah(total);
+function toggleCart(){
+ const b = document.getElementById("cartBox");
+ b.style.display = b.style.display==="block" ? "none" : "block";
 }
 
-function hapus(i){ keranjang.splice(i,1); tampilKeranjang(); }
-
-function checkoutWA(){
-  if(keranjang.length === 0){ alert("Keranjang masih kosong"); return; }
-  let total = 0;
-  let pesan = "Halo LAVINASHOP, saya mau order:%0A%0A";
-  keranjang.forEach(item => {
-    const sub = item.harga * item.qty;
-    total += sub;
-    pesan += "- " + item.nama + "%0A Size: " + item.size + "%0A Qty: " + item.qty + "%0A Subtotal: " + rupiah(sub) + "%0A%0A";
-  });
-  pesan += "Total: " + rupiah(total);
-  window.open("https://wa.me/6287834403060?text=" + pesan, "_blank");
-}
-
-function cariProduk(){
-  const kata = document.getElementById("cari").value.toLowerCase();
-  document.querySelectorAll(".product").forEach(p => {
-    p.style.display = p.innerText.toLowerCase().includes(kata) ? "flex" : "none";
-  });
-}
-
-tampil("perempuan", document.querySelector(".tab"));
+render();
 </script>
-
 </body>
 </html>
